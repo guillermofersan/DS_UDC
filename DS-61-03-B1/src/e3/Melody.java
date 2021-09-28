@@ -76,19 +76,16 @@ public class Melody {
 
 
     /*melody functions*/
-    int lastpos;
 
     ArrayList<NoteNode> notelist = new ArrayList<NoteNode>();
 
-
-    NoteNode[] Notelist;//pregunta: maximo?
-
     /*melody constructor*/
     public Melody () {
+
         /*
-         * Creates an empty Melody instance .a
+         * Creates an empty Melody instance.
          */
-        lastpos=-1;
+
 
     }
 
@@ -103,11 +100,11 @@ public class Melody {
          * or the time are not valid values .
          */
 
-        NoteNode temp = new NoteNode(note,accidental,time);
+        NoteNode item = new NoteNode(note,accidental,time);
 
-        lastpos++;
 
-        Notelist[lastpos]=temp;
+
+        notelist.add(item);
 
 
    }
@@ -119,9 +116,7 @@ public class Melody {
      * @return The note on index .
      * @throws IllegalArgumentException if the index is not a valid position .
      */
-        if(index>lastpos) throw new IllegalArgumentException();
-
-        return Notelist[0].getNote();
+        return notelist.get(index).getNote();
 }
 
     public Accidentals getAccidental (int index ) {
@@ -132,9 +127,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
 
-        if(index>lastpos) throw new IllegalArgumentException();
-
-        return Notelist[0].getAcc();
+        return notelist.get(index).getAcc();
     }
 
     public float getTime ( int index ) {
@@ -145,9 +138,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
 
-        if(index>lastpos) throw new IllegalArgumentException();
-
-        return Notelist[0].getT();
+        return notelist.get(index).getT();
     }
 
     public int size () {
@@ -156,7 +147,7 @@ public class Melody {
      * @return The number of notes in this melody .
      */
 
-        return lastpos+1;
+        return notelist.size();
 
     }
 
@@ -166,8 +157,9 @@ public class Melody {
          * @return The duration of this melody in milliseconds .
          */
         float totalTime=0;
-        for (int i=0; i<=lastpos;i++){
-            totalTime+=Notelist[i].getT();
+
+        for (int i=0; i<=notelist.size();i++){
+            totalTime+=notelist.get(i).getT();
         }
 
         return totalTime;
