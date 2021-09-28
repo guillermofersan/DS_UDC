@@ -79,6 +79,7 @@ public class Melody {
     int lastpos;
 
     ArrayList<NoteNode> notelist = new ArrayList<NoteNode>();
+    //a
 
     NoteNode[] Notelist;//pregunta: maximo?
 
