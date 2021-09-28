@@ -1,6 +1,8 @@
 package e3;
 
 
+import java.util.ArrayList;
+
 public class Melody {
 
 
@@ -75,6 +77,9 @@ public class Melody {
 
     /*melody functions*/
     int lastpos;
+
+    ArrayList<NoteNode> notelist = new ArrayList<NoteNode>();
+
     NoteNode[] Notelist;//pregunta: maximo?
 
     /*melody constructor*/
