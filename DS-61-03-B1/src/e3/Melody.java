@@ -86,7 +86,7 @@ public class Melody {
     /*melody constructor*/
     public Melody () {
         /*
-         * Creates an empty Melody instance .
+         * Creates an empty Melody instance .a
          */
         lastpos=-1;
 
