@@ -16,11 +16,18 @@ public class Melody {
             value=val;
         }
 
+
+
         /*GETTER*/
         public String getValue() {
             return value;
         }
 
+        @Override
+        public String toString() {
+            if (value==null) return "";
+            else return value;
+        }
 
 
         public static final Notes DO = new Notes("DO");
@@ -31,8 +38,14 @@ public class Melody {
         public static final Notes LA = new Notes("LA");
         public static final Notes SI = new Notes("SI");
 
-
         public static final Notes[] values = { DO, RE, MI, FA, SOL, LA, SI};
+
+        public static Notes[] values() {
+
+            return values;
+
+        }
+
     }
 
 
@@ -50,9 +63,25 @@ public class Melody {
             return AccName;
         }
 
+        @Override
+        public String toString() {
+            if (AccName==null) return "";
+            else return AccName;
+        }
+
         public static final Accidentals NATURAL = new Accidentals(null);
         public static final Accidentals SHARP = new Accidentals("#");
         public static final Accidentals FLAT = new Accidentals("b");
+
+        public static final Accidentals[] values = { NATURAL, SHARP, FLAT};
+
+        public static Accidentals[] values() {
+
+            return values;
+
+        }
+
+
     }
 
 
@@ -97,7 +126,7 @@ public class Melody {
                     if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, null)) return true;
                 if (Objects.equals(acc.AccName, null))
                     if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, "#")) return true;
-                }
+            }
 
             if(Objects.equals(note.value, "RE")){
                 if (Objects.equals(acc.AccName, "#"))
@@ -148,10 +177,7 @@ public class Melody {
             }
 
 
-
-
             return false;
-            //return Float.compare(noteNode.t, t) == 0 && Objects.equals(note, noteNode.note) && Objects.equals(acc, noteNode.acc);
 
             }
 
@@ -192,6 +218,9 @@ public class Melody {
          * or the time are not valid values .
          */
 
+        if (note==null || accidental==null || time<=0) throw new IllegalArgumentException();
+
+
         NoteNode item = new NoteNode(note,accidental,time);
 
 
@@ -208,7 +237,10 @@ public class Melody {
      * @return The note on index .
      * @throws IllegalArgumentException if the index is not a valid position .
      */
+
+        if(index>notelist.size()-1) throw new IllegalArgumentException();
         return notelist.get(index).getNote();
+
 }
 
     public Accidentals getAccidental (int index ) {
@@ -218,7 +250,7 @@ public class Melody {
      * @return The accidental on index .
      * @throws IllegalArgumentException if the index is not a valid position .
      */
-
+        if(index>notelist.size()-1) throw new IllegalArgumentException();
         return notelist.get(index).getAcc();
     }
 
@@ -230,6 +262,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
 
+        if(index>notelist.size()-1) throw new IllegalArgumentException();
         return notelist.get(index).getT();
     }
 
@@ -295,8 +328,15 @@ public class Melody {
          * The string representation of this melody .
          * @return The String representantion of this melody .
          */
+        String string="";
 
-        return "a";
+
+        for (int i=0; i<notelist.size();i++){
+            if (i!=0) string=string+" ";
+            string =string + notelist.get(i).getNote().toString() + notelist.get(i).getAcc().toString() + "(" + notelist.get(i).t + ")";
+        }
+
+        return string;
     }
 }
 
