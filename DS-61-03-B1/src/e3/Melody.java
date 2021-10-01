@@ -186,7 +186,16 @@ public class Melody {
         @Override
         public int hashCode() {
 
-            return Objects.hash(note, acc, t);
+            if( (Objects.equals(note.value, "DO") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "RE") && Objects.equals(acc.AccName, "b")) ) return 2 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "RE") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "MI") && Objects.equals(acc.AccName, "b")) ) return 3 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "MI") && Objects.equals(acc.AccName, null)) ||  (Objects.equals(note.value, "FA") && Objects.equals(acc.AccName, "b")) ) return 4 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "MI") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "FA") && Objects.equals(acc.AccName, null)) ) return 5 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "FA") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "SOL") && Objects.equals(acc.AccName, "b")) ) return 6 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "SOL") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "LA") && Objects.equals(acc.AccName, "b")) ) return 7 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "LA") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "SI") && Objects.equals(acc.AccName, "b")) ) return 8 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "SI") && Objects.equals(acc.AccName, null)) ||  (Objects.equals(note.value, "DO") && Objects.equals(acc.AccName, "b")) ) return 9 * Objects.hash(t);
+            else if ( (Objects.equals(note.value, "SI") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "DO") && Objects.equals(acc.AccName, null)) ) return 10 * Objects.hash(t);
+            else return Objects.hash(note, acc, t);
 
         }
 

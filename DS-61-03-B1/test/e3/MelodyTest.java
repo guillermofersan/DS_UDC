@@ -63,7 +63,7 @@ class MelodyTest {
         m2.addNote(Notes.LA, Accidentals.FLAT, 1f);
 
         assertEquals(m1, m2);
-        //assertEquals(m1.hashCode(), m2.hashCode());
+        assertEquals(m1.hashCode(), m2.hashCode());
 
     }
 
@@ -101,7 +101,7 @@ class MelodyTest {
         m2.addNote(Notes.DO, Accidentals.SHARP, 2f);
 
         assertEquals(m1, m2);
-        //assertEquals(m1.hashCode(), m2.hashCode());
+        assertEquals(m1.hashCode(), m2.hashCode());
 
     }
 
