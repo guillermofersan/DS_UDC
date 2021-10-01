@@ -2,6 +2,7 @@ package e3;
 
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Melody {
 
@@ -20,6 +21,8 @@ public class Melody {
             return value;
         }
 
+
+
         public static final Notes DO = new Notes("DO");
         public static final Notes RE = new Notes("RE");
         public static final Notes MI = new Notes("MI");
@@ -27,6 +30,9 @@ public class Melody {
         public static final Notes SOL = new Notes("SOL");
         public static final Notes LA = new Notes("LA");
         public static final Notes SI = new Notes("SI");
+
+
+        public static final Notes[] values = { DO, RE, MI, FA, SOL, LA, SI};
     }
 
 
@@ -55,6 +61,8 @@ public class Melody {
         Accidentals acc;
         float t;
 
+
+
         public NoteNode(Notes note, Accidentals acc, float t) {
             this.note = note;
             this.acc = acc;
@@ -72,6 +80,29 @@ public class Melody {
         public float getT() {
             return t;
         }
+
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            NoteNode noteNode = (NoteNode) o;
+
+
+
+            return Float.compare(noteNode.t, t) == 0 && Objects.equals(note, noteNode.note) && Objects.equals(acc, noteNode.acc);
+
+        }
+
+
+
+        @Override
+        public int hashCode() {
+
+            return Objects.hash(note, acc, t);
+
+        }
+
     }
 
 
@@ -158,7 +189,9 @@ public class Melody {
          */
         float totalTime=0;
 
-        for (int i=0; i<=notelist.size();i++){
+
+
+        for (int i=0; i<notelist.size();i++){
             totalTime+=notelist.get(i).getT();
         }
 
@@ -167,32 +200,32 @@ public class Melody {
 
 
     @Override
-
-    public boolean equals ( Object o) {
+    public boolean equals(Object o) {
         /*
-     * Performs the equality tests of the current melody with another melody
-     * passed as a parameter . Two melodies are equal if they represent the same
-     * music fragment regardless of the name of its notes .
-     * @param o The melody to be compared with the current melody .
-    6
-     * @return true if the melodies are equals , false otherwise .
-     */
-        boolean eq=true;
+         * Performs the equality tests of the current melody with another melody
+         * passed as a parameter . Two melodies are equal if they represent the same
+         * music fragment regardless of the name of its notes .
+         * @param o The melody to be compared with the current melody .
+         * @return true if the melodies are equals , false otherwise .
+         */
 
-        return eq;
+
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Melody melody = (Melody) o;
+        return Objects.equals(notelist, melody.notelist);
+
+
+
     }
 
     @Override
+    public int hashCode() {
 
-    public int hashCode () {
-        /*
-         * Returns an integer that is a hash code representation of the melody .
-         * Two melodies m1 , m2 that are equals (m1. equals (m2) == true ) must
-         * have the same hash code .
-         * @return The hash code of this melody .
-         */
 
-        return 0;
+        return Objects.hash(notelist);
+
+
     }
 
     @Override

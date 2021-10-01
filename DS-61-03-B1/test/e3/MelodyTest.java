@@ -43,6 +43,7 @@ class MelodyTest {
         Melody m2 = new Melody();
 
         assertEquals(m1, m2);
+
         assertEquals(m1.hashCode(), m2.hashCode());
 
         m1.addNote(Notes.DO, Accidentals.NATURAL, 1f);
@@ -63,6 +64,7 @@ class MelodyTest {
 
         assertEquals(m1, m2);
         assertEquals(m1.hashCode(), m2.hashCode());
+
     }
 
     @Test
@@ -102,7 +104,7 @@ class MelodyTest {
         assertEquals(m1.hashCode(), m2.hashCode());
 
     }
-
+/*
     @Test
     void testEqualsTypes() {
         assertEquals(simpleMelody, simpleMelody);
@@ -211,6 +213,6 @@ class MelodyTest {
         m.addNote(Notes.DO, Accidentals.NATURAL, 1f);
         assertThrows(IllegalArgumentException.class, () -> m.getNote(1));
 
-    }
+    }*/
 }
 
