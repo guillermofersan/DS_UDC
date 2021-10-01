@@ -88,11 +88,72 @@ public class Melody {
             if (o == null || getClass() != o.getClass()) return false;
             NoteNode noteNode = (NoteNode) o;
 
+            if(Float.compare(noteNode.t, t) == 0 && Objects.equals(note, noteNode.note) && Objects.equals(acc, noteNode.acc)) return true;
+
+            if(Objects.equals(note.value, "DO")){
+                if (Objects.equals(acc.AccName, "#"))
+                    if(Objects.equals(noteNode.note.value, "RE") && Objects.equals(noteNode.acc.AccName, "b")) return true;
+                if (Objects.equals(acc.AccName, "b"))
+                    if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, null)) return true;
+                if (Objects.equals(acc.AccName, null))
+                    if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+                }
+
+            if(Objects.equals(note.value, "RE")){
+                if (Objects.equals(acc.AccName, "#"))
+                    if(Objects.equals(noteNode.note.value, "MI") && Objects.equals(noteNode.acc.AccName, "b")) return true;
+                if (Objects.equals(acc.AccName, "b"))
+                    if(Objects.equals(noteNode.note.value, "DO") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+            }
+
+            if(Objects.equals(note.value, "MI")){
+                if (Objects.equals(acc.AccName, null))
+                    if(Objects.equals(noteNode.note.value, "FA") && Objects.equals(noteNode.acc.AccName, "b")) return true;
+                if (Objects.equals(acc.AccName, "#"))
+                    if(Objects.equals(noteNode.note.value, "FA") && Objects.equals(noteNode.acc.AccName, null)) return true;
+                if (Objects.equals(acc.AccName, "b"))
+                    if(Objects.equals(noteNode.note.value, "RE") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+            }
+
+            if(Objects.equals(note.value, "FA")){
+                if (Objects.equals(acc.AccName, "#"))
+                    if(Objects.equals(noteNode.note.value, "SOL") && Objects.equals(noteNode.acc.AccName, "b")) return true;
+                if (Objects.equals(acc.AccName, "b"))
+                    if(Objects.equals(noteNode.note.value, "MI") && Objects.equals(noteNode.acc.AccName, null)) return true;
+                if (Objects.equals(acc.AccName, null))
+                    if(Objects.equals(noteNode.note.value, "MI") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+            }
+
+            if(Objects.equals(note.value, "SOL")){
+                if (Objects.equals(acc.AccName, "#"))
+                    if(Objects.equals(noteNode.note.value, "LA") && Objects.equals(noteNode.acc.AccName, "b")) return true;
+                if (Objects.equals(acc.AccName, "b"))
+                    if(Objects.equals(noteNode.note.value, "FA") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+            }
+
+            if(Objects.equals(note.value, "LA")){
+                if (Objects.equals(acc.AccName, "#"))
+                    if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, "b")) return true;
+                if (Objects.equals(acc.AccName, "b"))
+                    if(Objects.equals(noteNode.note.value, "SOL") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+            }
+
+            if(Objects.equals(note.value, "SI")){
+                if (Objects.equals(acc.AccName, "b"))
+                    if(Objects.equals(noteNode.note.value, "LA") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+                if (Objects.equals(acc.AccName, null))
+                    if(Objects.equals(noteNode.note.value, "DO") && Objects.equals(noteNode.acc.AccName, "b")) return true;
+                if (Objects.equals(acc.AccName, "#"))
+                    if(Objects.equals(noteNode.note.value, "DO") && Objects.equals(noteNode.acc.AccName, null)) return true;
+            }
 
 
-            return Float.compare(noteNode.t, t) == 0 && Objects.equals(note, noteNode.note) && Objects.equals(acc, noteNode.acc);
 
-        }
+
+            return false;
+            //return Float.compare(noteNode.t, t) == 0 && Objects.equals(note, noteNode.note) && Objects.equals(acc, noteNode.acc);
+
+            }
 
 
 

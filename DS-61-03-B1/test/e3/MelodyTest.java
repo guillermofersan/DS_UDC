@@ -104,13 +104,15 @@ class MelodyTest {
         assertEquals(m1.hashCode(), m2.hashCode());
 
     }
-/*
+
     @Test
     void testEqualsTypes() {
         assertEquals(simpleMelody, simpleMelody);
         assertNotEquals(null, simpleMelody);
         assertNotEquals("DOREMI", simpleMelody);
     }
+
+
 
     @Test
     void testNotEqualsSize() {
@@ -169,7 +171,7 @@ class MelodyTest {
 
         assertNotEquals(m1, m2);
     }
-
+/*
     @Test
     void testToString() {
         assertEquals("DO(5.0) RE#(7.0) SOLb(1.25)", simpleMelody.toString());
