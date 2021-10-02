@@ -213,7 +213,6 @@ public class Melody {
          * Creates an empty Melody instance.
          */
 
-
     }
 
     public void addNote ( Notes note , Accidentals accidental , float time ) {

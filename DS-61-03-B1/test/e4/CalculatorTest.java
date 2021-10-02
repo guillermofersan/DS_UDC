@@ -1,18 +1,17 @@
-/*
 package e4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-*/
+
 /*
  * Main test class for Calculator (JUnit 5)
  *
  * @author Iñigo L.R.B
  *
 */
-/*
+
 class CalculatorTest {
 
     private final static float EPSILON = 0.01f; // We need to consider EPSILON range due to precision constraints (floats)
@@ -59,6 +58,7 @@ class CalculatorTest {
         assertEquals(-3f, result, EPSILON);
 
         // Using clean operations
+
         calculator.addOperation("-", 5.2f, 4.1f);
         calculator.addOperation("*", 3.256987f);
         assertEquals("[STATE:[-]5.2_4.1[*]3.256987]", calculator.toString());
@@ -76,8 +76,8 @@ class CalculatorTest {
         assertEquals("[STATE:[+]5.0_3.0[*]2.0]", calculator.toString());
         result = calculator.executeOperations();
         assertEquals(16f, result, EPSILON);
+
     }
 }
 
 
- */
