@@ -39,17 +39,17 @@ public class Calculator {
     public void addOperation ( String operation , float ... values ) {
 
         /*
-         * Add a new operation to the internal state of the calculator .
-         * It is worth mentioning that the calculator behaves in an accumulative way ,
-         * thus only first operation has two operands .
-         * The rest of computations work with the accumulated value and only an extra
-         * new operand . Second input value must be ignored if the operation does not
-         * correspond to the first one.
-         *
-         * @param operation operation to add , as string , "+" , " -" , "*" , "/".
+          Add a new operation to the internal state of the calculator .
+          It is worth mentioning that the calculator behaves in an accumulative way ,
+          thus only first operation has two operands .
+          The rest of computations work with the accumulated value and only an extra
+          new operand . Second input value must be ignored if the operation does not
+          correspond to the first one.
+
+          @param operation operation to add , as string , "+" , " -" , "*" , "/".
          * @param values Operands of the new operation ( one or two operands ).
          * Uses the varargs feature .
-         * https :// docs . oracle . com / javase /8/ docs / technotes / guides / language / varargs . html
+         * https://docs.oracle.com/javase/8/docs/technotes/guides/language/varargs.html
          * @throws IllegalArgumentException If the operation does not exist .
          */
 

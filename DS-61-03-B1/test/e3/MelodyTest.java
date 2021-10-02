@@ -46,7 +46,7 @@ class MelodyTest {
 
         assertEquals(m1.hashCode(), m2.hashCode());
 
-        m1.addNote(Notes.DO, Accidentals.NATURAL, 1f);
+        m1.addNote(Notes.DO, Accidentals.SHARP, 1f);
         m1.addNote(Notes.RE, Accidentals.SHARP, 2f);
         m1.addNote(Notes.SOL, Accidentals.NATURAL, 3f);
         m1.addNote(Notes.FA, Accidentals.NATURAL, 1f);
@@ -54,7 +54,7 @@ class MelodyTest {
         m1.addNote(Notes.SI, Accidentals.NATURAL, 1f);
         m1.addNote(Notes.LA, Accidentals.FLAT, 1f);
 
-        m2.addNote(Notes.DO, Accidentals.NATURAL, 1f);
+        m2.addNote(Notes.DO, Accidentals.SHARP, 1f);
         m2.addNote(Notes.RE, Accidentals.SHARP, 2f);
         m2.addNote(Notes.SOL, Accidentals.NATURAL, 3f);
         m2.addNote(Notes.FA, Accidentals.NATURAL, 1f);

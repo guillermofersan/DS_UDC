@@ -1,6 +1,7 @@
 package e3;
 
 
+import java.net.PortUnreachableException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -9,41 +10,42 @@ public class Melody {
 
 
     static class Notes{
-        String value;
+
+        public enum notes {DO, RE, MI, FA, SOL, LA, SI};
+        notes value;
+        String note_string;
 
         /*CONSTRUCTOR*/
-        public Notes(String val) {
-            value=val;
+        public Notes(Notes.notes value) {
+            this.value = value;
+            note_string=value.name();
         }
 
-
-
-        /*GETTER*/
-        public String getValue() {
+        /*GETTERS*/
+        public String note_string() {
+            return note_string;
+        }
+        public notes getValue() {
             return value;
         }
 
         @Override
         public String toString() {
-            if (value==null) return "";
-            else return value;
+            return note_string;
         }
 
+        public static final Notes DO = new Notes(notes.DO);
+        public static final Notes RE = new Notes(notes.RE);
+        public static final Notes MI = new Notes(notes.MI);
+        public static final Notes FA = new Notes(notes.FA);
+        public static final Notes SOL = new Notes(notes.SOL);
+        public static final Notes LA = new Notes(notes.LA);
+        public static final Notes SI = new Notes(notes.SI);
 
-        public static final Notes DO = new Notes("DO");
-        public static final Notes RE = new Notes("RE");
-        public static final Notes MI = new Notes("MI");
-        public static final Notes FA = new Notes("FA");
-        public static final Notes SOL = new Notes("SOL");
-        public static final Notes LA = new Notes("LA");
-        public static final Notes SI = new Notes("SI");
 
-        public static final Notes[] values = { DO, RE, MI, FA, SOL, LA, SI};
-
+        public static final Notes[] values = {DO, RE, MI, FA, SOL, LA, SI};
         public static Notes[] values() {
-
             return values;
-
         }
 
     }
@@ -51,16 +53,30 @@ public class Melody {
 
     static class Accidentals{
 
+
+        public enum accidentals {NATURAL, SHARP, FLAT};
+        accidentals value;
         String AccName;
 
         /*CONSTRUCTOR*/
-        public Accidentals(String accName) {
-            AccName = accName;
+
+        public Accidentals(accidentals value) {
+            this.value = value;
+            switch ( value){
+                case NATURAL: AccName=null; break;
+                case SHARP: AccName="#"; break;
+                case FLAT: AccName="b"; break;
+                default:break;
+            }
         }
 
-        /*GETTER*/
+        /*GETTERS*/
         public String getAccName() {
             return AccName;
+        }
+
+        public accidentals getValue() {
+            return value;
         }
 
         @Override
@@ -69,12 +85,12 @@ public class Melody {
             else return AccName;
         }
 
-        public static final Accidentals NATURAL = new Accidentals(null);
-        public static final Accidentals SHARP = new Accidentals("#");
-        public static final Accidentals FLAT = new Accidentals("b");
+        public static final Accidentals NATURAL = new Accidentals(accidentals.NATURAL);
+        public static final Accidentals SHARP = new Accidentals(accidentals.SHARP);
+        public static final Accidentals FLAT = new Accidentals(accidentals.FLAT);
 
-        public static final Accidentals[] values = { NATURAL, SHARP, FLAT};
 
+        public static final Accidentals[] values = {NATURAL, SHARP, FLAT};
         public static Accidentals[] values() {
 
             return values;
@@ -119,82 +135,64 @@ public class Melody {
 
             if(Float.compare(noteNode.t, t) == 0 && Objects.equals(note, noteNode.note) && Objects.equals(acc, noteNode.acc)) return true;
 
-            if(Objects.equals(note.value, "DO")){
-                if (Objects.equals(acc.AccName, "#"))
-                    if(Objects.equals(noteNode.note.value, "RE") && Objects.equals(noteNode.acc.AccName, "b")) return true;
-                if (Objects.equals(acc.AccName, "b"))
-                    if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, null)) return true;
-                if (Objects.equals(acc.AccName, null))
-                    if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, "#")) return true;
+
+            switch (note.getValue()){
+                case DO:
+                    switch (acc.getValue()){
+                        case NATURAL: if((noteNode.note.getValue()== Notes.notes.SI) && (noteNode.acc.getValue()==Accidentals.accidentals.SHARP)) return true; break;
+                        case SHARP: if((noteNode.note.getValue()== Notes.notes.RE) && (noteNode.acc.getValue()==Accidentals.accidentals.FLAT)) return true; break;
+                        case FLAT: if((noteNode.note.getValue()== Notes.notes.SI) && (noteNode.acc.getValue()==Accidentals.accidentals.NATURAL)) return true; break;
+                    } break;
+                case RE:
+                    switch (acc.getValue()){
+                        case SHARP: if((noteNode.note.getValue()== Notes.notes.MI) && (noteNode.acc.getValue()==Accidentals.accidentals.FLAT)) return true; break;
+                        case FLAT:  if((noteNode.note.getValue()== Notes.notes.DO) && (noteNode.acc.getValue()==Accidentals.accidentals.SHARP)) return true; break;
+                    } break;
+                case MI:
+                    switch (acc.getValue()){
+                        case NATURAL: if((noteNode.note.getValue()== Notes.notes.FA) && (noteNode.acc.getValue()==Accidentals.accidentals.FLAT)) return true; break;
+                        case SHARP: if((noteNode.note.getValue()== Notes.notes.FA) && (noteNode.acc.getValue()== Accidentals.accidentals.NATURAL)) return true; break;
+                        case FLAT:  if((noteNode.note.getValue()== Notes.notes.RE) && (noteNode.acc.getValue()==Accidentals.accidentals.SHARP)) return true; break;
+                    } break;
+                case FA:
+                    switch (acc.getValue()){
+                        case NATURAL: if((noteNode.note.getValue()== Notes.notes.MI) && (noteNode.acc.getValue()== Accidentals.accidentals.SHARP)) return true; break;
+                        case SHARP:  if((noteNode.note.getValue()== Notes.notes.SOL) && (noteNode.acc.getValue()==Accidentals.accidentals.FLAT)) return true; break;
+                        case FLAT: if((noteNode.note.getValue()== Notes.notes.MI) && (noteNode.acc.getValue()== Accidentals.accidentals.NATURAL)) return true; break;
+                    } break;
+                case SOL:
+                    switch (acc.getValue()){
+                        case SHARP: if((noteNode.note.getValue()== Notes.notes.LA) && (noteNode.acc.getValue()== Accidentals.accidentals.FLAT)) return true; break;
+                        case FLAT: if((noteNode.note.getValue()== Notes.notes.FA) && (noteNode.acc.getValue()== Accidentals.accidentals.SHARP)) return true; break;
+                    } break;
+                case LA:
+                    switch (acc.getValue()){
+                        case SHARP: if((noteNode.note.getValue()== Notes.notes.SI) && (noteNode.acc.getValue()== Accidentals.accidentals.FLAT)) return true; break;
+                        case FLAT:  if((noteNode.note.getValue()== Notes.notes.SOL) && (noteNode.acc.getValue()==Accidentals.accidentals.SHARP)) return true; break;
+                    } break;
+                case SI:
+                    switch (acc.getValue()){
+                        case NATURAL: if((noteNode.note.getValue()== Notes.notes.DO) && (noteNode.acc.getValue()== Accidentals.accidentals.FLAT)) return true; break;
+                        case SHARP: if((noteNode.note.getValue()== Notes.notes.DO) && (noteNode.acc.getValue()== Accidentals.accidentals.NATURAL)) return true; break;
+                        case FLAT: if((noteNode.note.getValue()== Notes.notes.LA) && (noteNode.acc.getValue()== Accidentals.accidentals.SHARP)) return true; break;
+                    } break;
             }
-
-            if(Objects.equals(note.value, "RE")){
-                if (Objects.equals(acc.AccName, "#"))
-                    if(Objects.equals(noteNode.note.value, "MI") && Objects.equals(noteNode.acc.AccName, "b")) return true;
-                if (Objects.equals(acc.AccName, "b"))
-                    if(Objects.equals(noteNode.note.value, "DO") && Objects.equals(noteNode.acc.AccName, "#")) return true;
-            }
-
-            if(Objects.equals(note.value, "MI")){
-                if (Objects.equals(acc.AccName, null))
-                    if(Objects.equals(noteNode.note.value, "FA") && Objects.equals(noteNode.acc.AccName, "b")) return true;
-                if (Objects.equals(acc.AccName, "#"))
-                    if(Objects.equals(noteNode.note.value, "FA") && Objects.equals(noteNode.acc.AccName, null)) return true;
-                if (Objects.equals(acc.AccName, "b"))
-                    if(Objects.equals(noteNode.note.value, "RE") && Objects.equals(noteNode.acc.AccName, "#")) return true;
-            }
-
-            if(Objects.equals(note.value, "FA")){
-                if (Objects.equals(acc.AccName, "#"))
-                    if(Objects.equals(noteNode.note.value, "SOL") && Objects.equals(noteNode.acc.AccName, "b")) return true;
-                if (Objects.equals(acc.AccName, "b"))
-                    if(Objects.equals(noteNode.note.value, "MI") && Objects.equals(noteNode.acc.AccName, null)) return true;
-                if (Objects.equals(acc.AccName, null))
-                    if(Objects.equals(noteNode.note.value, "MI") && Objects.equals(noteNode.acc.AccName, "#")) return true;
-            }
-
-            if(Objects.equals(note.value, "SOL")){
-                if (Objects.equals(acc.AccName, "#"))
-                    if(Objects.equals(noteNode.note.value, "LA") && Objects.equals(noteNode.acc.AccName, "b")) return true;
-                if (Objects.equals(acc.AccName, "b"))
-                    if(Objects.equals(noteNode.note.value, "FA") && Objects.equals(noteNode.acc.AccName, "#")) return true;
-            }
-
-            if(Objects.equals(note.value, "LA")){
-                if (Objects.equals(acc.AccName, "#"))
-                    if(Objects.equals(noteNode.note.value, "SI") && Objects.equals(noteNode.acc.AccName, "b")) return true;
-                if (Objects.equals(acc.AccName, "b"))
-                    if(Objects.equals(noteNode.note.value, "SOL") && Objects.equals(noteNode.acc.AccName, "#")) return true;
-            }
-
-            if(Objects.equals(note.value, "SI")){
-                if (Objects.equals(acc.AccName, "b"))
-                    if(Objects.equals(noteNode.note.value, "LA") && Objects.equals(noteNode.acc.AccName, "#")) return true;
-                if (Objects.equals(acc.AccName, null))
-                    if(Objects.equals(noteNode.note.value, "DO") && Objects.equals(noteNode.acc.AccName, "b")) return true;
-                if (Objects.equals(acc.AccName, "#"))
-                    if(Objects.equals(noteNode.note.value, "DO") && Objects.equals(noteNode.acc.AccName, null)) return true;
-            }
-
-
             return false;
-
             }
-
 
 
         @Override
         public int hashCode() {
 
-            if( (Objects.equals(note.value, "DO") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "RE") && Objects.equals(acc.AccName, "b")) ) return 2 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "RE") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "MI") && Objects.equals(acc.AccName, "b")) ) return 3 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "MI") && Objects.equals(acc.AccName, null)) ||  (Objects.equals(note.value, "FA") && Objects.equals(acc.AccName, "b")) ) return 4 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "MI") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "FA") && Objects.equals(acc.AccName, null)) ) return 5 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "FA") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "SOL") && Objects.equals(acc.AccName, "b")) ) return 6 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "SOL") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "LA") && Objects.equals(acc.AccName, "b")) ) return 7 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "LA") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "SI") && Objects.equals(acc.AccName, "b")) ) return 8 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "SI") && Objects.equals(acc.AccName, null)) ||  (Objects.equals(note.value, "DO") && Objects.equals(acc.AccName, "b")) ) return 9 * Objects.hash(t);
-            else if ( (Objects.equals(note.value, "SI") && Objects.equals(acc.AccName, "#")) ||  (Objects.equals(note.value, "DO") && Objects.equals(acc.AccName, null)) ) return 10 * Objects.hash(t);
+            if((note.getValue()== Notes.notes.DO && acc.getValue()== Accidentals.accidentals.SHARP) ||  (note.getValue()== Notes.notes.RE && acc.getValue()== Accidentals.accidentals.FLAT)) return 2 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.RE && acc.getValue()== Accidentals.accidentals.SHARP) ||  (note.getValue()== Notes.notes.MI && acc.getValue()== Accidentals.accidentals.FLAT)) return 3 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.MI && acc.getValue()== Accidentals.accidentals.NATURAL) ||  (note.getValue()== Notes.notes.FA && acc.getValue()== Accidentals.accidentals.FLAT)) return 3 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.MI && acc.getValue()== Accidentals.accidentals.SHARP) ||  (note.getValue()== Notes.notes.FA && acc.getValue()== Accidentals.accidentals.NATURAL)) return 3 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.FA && acc.getValue()== Accidentals.accidentals.SHARP) ||  (note.getValue()== Notes.notes.SOL && acc.getValue()== Accidentals.accidentals.FLAT)) return 3 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.SOL && acc.getValue()== Accidentals.accidentals.SHARP) ||  (note.getValue()== Notes.notes.LA && acc.getValue()== Accidentals.accidentals.FLAT)) return 3 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.LA && acc.getValue()== Accidentals.accidentals.SHARP) ||  (note.getValue()== Notes.notes.SI && acc.getValue()== Accidentals.accidentals.FLAT)) return 3 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.SI && acc.getValue()== Accidentals.accidentals.NATURAL) ||  (note.getValue()== Notes.notes.DO && acc.getValue()== Accidentals.accidentals.FLAT)) return 3 * Objects.hash(t);
+            else if ((note.getValue()== Notes.notes.SI && acc.getValue()== Accidentals.accidentals.SHARP) ||  (note.getValue()== Notes.notes.DO && acc.getValue()== Accidentals.accidentals.NATURAL)) return 3 * Objects.hash(t);
             else return Objects.hash(note, acc, t);
 
         }
@@ -347,4 +345,3 @@ public class Melody {
         return string;
     }
 }
-
