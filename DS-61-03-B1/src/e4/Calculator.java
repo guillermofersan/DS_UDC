@@ -1,43 +1,57 @@
 package e4;
 
+import java.util.ArrayList;
+
+import static e4.Calculator.operations.*;
+
 public class Calculator {
 
-    float result;
     int op_count;
-    String op_string="[STATE:";
+    ArrayList<operations> opList;
+    float[] operators;
 
-    boolean error;
+    public void clearState(){
+        opList.clear();
+        op_count=0;
+    }
+
+    public enum operations {
+        SUM,
+        SUB,
+        DIV,
+        MUL;
+
+        public float SolveOP(float op1, float op2){
+
+            float result = switch (this) {
+                case SUM -> op1 + op2;
+                case SUB -> op1 - op2;
+                case DIV ->op1 / op2;
+                case MUL -> op1 * op2;
+            };
+
+            return result;
+        }
+    }
 
 
-
-
-
-    public Calculator () {
+    public Calculator() {
         /*
          * Public constructor of the calculator .
          */
-        result=0;
-        op_count=0;
-        error=false;
 
     }
 
+    public void cleanOperations() {
 
-
-    public void cleanOperations () {
         /*
          * Clean the internal state of the calculator
          */
-        op_string = "[STATE:";
-        result = 0;
         op_count = 0;
-        error=false;
-
-
+        opList.clear();
     }
 
-    public void addOperation ( String operation , float ... values ) {
-
+    public void addOperation(String operation, float... values) {
         /*
           Add a new operation to the internal state of the calculator .
           It is worth mentioning that the calculator behaves in an accumulative way ,
@@ -45,7 +59,6 @@ public class Calculator {
           The rest of computations work with the accumulated value and only an extra
           new operand . Second input value must be ignored if the operation does not
           correspond to the first one.
-
           @param operation operation to add , as string , "+" , " -" , "*" , "/".
          * @param values Operands of the new operation ( one or two operands ).
          * Uses the varargs feature .
@@ -54,53 +67,40 @@ public class Calculator {
          */
 
         float op1, op2;
-        if(op_count==0){
-            op1=values[0];
-            op2=values[1];
+        if (op_count == 0) {
+            op1 = values[0];
+            op2 = values[1];
 
-            op_string+="["+operation+"]"+ op1 + "_" + op2;
-        }
-        else{
-            op1=result;
-            op2=values[0];
-            op_string+="["+operation+"]"+op2;
-
+        } else {
+            op2 = values[0];
         }
 
-
-        switch(operation){
+        switch (operation) {
             case "+":
-                result=op1+op2;
+                opList.add(SUM);
                 break;
 
             case "-":
-                result=op1-op2;
+                opList.add(SUB);
                 break;
 
             case "*":
-                result=op1*op2;
+                opList.add(MUL);
                 break;
 
             case "/":
-                if (op2==0) error=true;
-                else result=op1/op2;
+                opList.add(DIV);
                 break;
 
             default:
-                op_string = "[STATE:";
-                op_count = 0;
-                error=false;
-                result=0;
                 throw new IllegalArgumentException();
         }
 
         op_count++;
 
-        /*  3+1 = 4 ;  4+2 = 6; 6/2 = 3  */
-        /*  (((3+1)+2)/2)  */
     }
 
-    public float executeOperations () {
+    public float executeOperations() {
 
         /*
          * Execute the set of operations of the internal state of the calculator .
@@ -111,29 +111,26 @@ public class Calculator {
          * @throws ArithmeticException If the operation returns an invalid value
          * ( division by zero )
          */
-        float final_result=result;
+        float result = 0;
 
 
 
+        for (int i=0;i<=op_count-1;i++){
+            if (op_count==0 && !opList.isEmpty()){
+                result=opList.get(0).SolveOP(operators[0],operators[1]);
+            } else{
+                result=opList.get(i).SolveOP(result,operators[i+1]);
+            }
 
-        op_string = "[STATE:";
+        }
+
         op_count = 0;
 
-        result=0;
-
-        if (error){
-            error=false;
-            throw new ArithmeticException();
-        }
-        error=false;
-
-
-        return final_result;
-
+        return result;
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         /*
          * Current internal state of calculator is printed
          * FORMAT :
@@ -142,7 +139,6 @@ public class Calculator {
          * @return String of the internal state of the calculator
          */
 
-
-        return op_string+"]";
+        return "";
     }
 }
