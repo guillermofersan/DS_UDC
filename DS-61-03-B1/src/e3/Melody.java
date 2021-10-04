@@ -7,14 +7,24 @@ import java.util.Objects;
 
 public class Melody {
 
-    public enum Notes {DO, RE, MI, FA, SOL, LA, SI};
-    public enum Accidentals {NATURAL, SHARP, FLAT};
+    public enum Notes {DO, RE, MI, FA, SOL, LA, SI}
+    public enum Accidentals {NATURAL, SHARP, FLAT;
+
+        @Override
+        public String toString() {
+            return switch (this){
+                case NATURAL -> "";
+                case SHARP -> "#";
+                case FLAT -> "b";
+            };
+        }
+    }
 
 
 
     /*melody functions*/
 
-    ArrayList<NoteNode> notelist = new ArrayList<NoteNode>();
+    ArrayList<NoteNode> notelist = new ArrayList<>();
 
     /*melody constructor*/
     public Melody () {
@@ -99,9 +109,8 @@ public class Melody {
         float totalTime=0;
 
 
-
-        for (int i=0; i<notelist.size();i++){
-            totalTime+=notelist.get(i).getT();
+        for (NoteNode noteNode : notelist) {
+            totalTime += noteNode.getT();
         }
 
         return totalTime;
@@ -143,14 +152,14 @@ public class Melody {
          * The string representation of this melody .
          * @return The String representantion of this melody .
          */
-        String string="";
+        StringBuilder string= new StringBuilder();
 
 
         for (int i=0; i<notelist.size();i++){
-            if (i!=0) string=string+" ";
-            string =string + notelist.get(i).getNote().toString() + notelist.get(i).getAcc().toString() + "(" + notelist.get(i).getT() + ")";
+            if (i!=0) string.append(" ");
+            string.append(notelist.get(i).getNote().toString()).append(notelist.get(i).getAcc().toString()).append("(").append(notelist.get(i).getT()).append(")");
         }
 
-        return string;
+        return string.toString();
     }
 }

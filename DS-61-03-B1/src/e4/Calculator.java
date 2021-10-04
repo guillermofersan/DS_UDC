@@ -8,7 +8,7 @@ import static e4.Calculator.operations.*;
 public class Calculator {
 
     int op_count;
-    ArrayList<op> opList = new ArrayList<op>();
+    ArrayList<op> opList = new ArrayList<>();
 
     public class op{
         operations operation;
@@ -174,14 +174,14 @@ public class Calculator {
          * EXAMPLES : JUnit tests
          * @return String of the internal state of the calculator
          */
-        String text="[STATE:";
+        StringBuilder text= new StringBuilder("[STATE:");
 
         for (int i=0;i<op_count;i++){
             if (i==0 && !opList.isEmpty()){
 
-                text+="["+opList.get(1).getOperation().toString()+"]"+opList.get(0).getOperator()+"_"+opList.get(1).getOperator();
+                text.append("[").append(opList.get(1).getOperation().toString()).append("]").append(opList.get(0).getOperator()).append("_").append(opList.get(1).getOperator());
 
-            } else text+="["+opList.get(i+1).getOperation().toString()+"]"+opList.get(i+1).getOperator();
+            } else text.append("[").append(opList.get(i + 1).getOperation().toString()).append("]").append(opList.get(i + 1).getOperator());
         }
 
         return text+"]";

@@ -26,13 +26,13 @@ public class Slopes
         /*Checking if the map is valid*/
         rows=slopeMap.length;
         for (int i=0; i<rows; i++){
-            if(slopeMap[i].length!=rows) throw new IllegalArgumentException();;
+            if(slopeMap[i].length!=rows) throw new IllegalArgumentException();
         }
         if(right <1 || down<1 || right>=slopeMap[0].length || down>=slopeMap.length) throw new IllegalArgumentException();
 
-        for (int r=0; r<slopeMap.length; r++){
-            for (int c=0; c<slopeMap[0].length; c++){
-                if (slopeMap[r][c] != '.' && slopeMap[r][c] != '#') {
+        for (char[] chars : slopeMap) {
+            for (int c = 0; c < slopeMap[0].length; c++) {
+                if (chars[c] != '.' && chars[c] != '#') {
                     throw new IllegalArgumentException();
                 }
             }
@@ -87,13 +87,13 @@ public class Slopes
         /*Checking if the map is valid*/
         rows=slopeMap.length;
         for (int i=0; i<rows; i++){
-            if(slopeMap[i].length!=rows) throw new IllegalArgumentException();;
+            if(slopeMap[i].length!=rows) throw new IllegalArgumentException();
         }
         if(right <1 || down<1 || right>=slopeMap[0].length || down>=slopeMap.length) throw new IllegalArgumentException();
 
-        for (int r=0; r<slopeMap.length; r++){
-            for (int c=0; c<slopeMap[0].length; c++){
-                if (slopeMap[r][c] != '.' && slopeMap[r][c] != '#') {
+        for (char[] chars : slopeMap) {
+            for (int c = 0; c < slopeMap[0].length; c++) {
+                if (chars[c] != '.' && chars[c] != '#') {
                     throw new IllegalArgumentException();
                 }
             }

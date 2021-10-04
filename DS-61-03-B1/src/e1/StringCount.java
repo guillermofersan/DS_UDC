@@ -54,9 +54,9 @@ public class StringCount {
         char[] characters = text.toCharArray();
         int count=0;
 
-        for (int i = 0; i < characters.length; i++){
+        for (char character : characters) {
 
-            if( characters[i]==c ) count++;
+            if (character == c) count++;
 
         }
 
@@ -76,9 +76,9 @@ public class StringCount {
         char[] characters = text.toCharArray();
         int count=0;
 
-        for (int i = 0; i < characters.length; i++){
+        for (char character : characters) {
 
-            if( characters[i]==Character.toLowerCase(c) || characters[i]==Character.toUpperCase(c) ) count++;
+            if (character == Character.toLowerCase(c) || character == Character.toUpperCase(c)) count++;
 
         }
 
