@@ -1,5 +1,6 @@
 package e4;
 
+
 import java.util.ArrayList;
 
 import static e4.Calculator.operations.*;
@@ -7,13 +8,39 @@ import static e4.Calculator.operations.*;
 public class Calculator {
 
     int op_count;
-    ArrayList<operations> opList;
-    float[] operators;
+    ArrayList<op> opList = new ArrayList<op>();
 
-    public void clearState(){
-        opList.clear();
-        op_count=0;
+    public class op{
+        operations operation;
+        float operator;
+
+        /*CONSTRUCTORS*/
+        public op(operations operation, float operator) {
+            this.operation = operation;
+            this.operator = operator;
+        }
+        public op(float operator) {
+            this.operator = operator;
+        }
+
+        /*GETTERS*/
+        public operations getOperation() {
+            return operation;
+        }
+        public float getOperator() {
+            return operator;
+        }
+
+        public boolean isError(){
+
+            return (this.operation == DIV && this.operator == 0);
+        }
+
+
+
     }
+
+
 
     public enum operations {
         SUM,
@@ -23,14 +50,23 @@ public class Calculator {
 
         public float SolveOP(float op1, float op2){
 
-            float result = switch (this) {
+            return switch (this) {
                 case SUM -> op1 + op2;
                 case SUB -> op1 - op2;
-                case DIV ->op1 / op2;
+                case DIV -> op1 / op2;
                 case MUL -> op1 * op2;
             };
 
-            return result;
+        }
+
+        @Override
+        public String toString() {
+            return switch (this) {
+                case SUM -> "+";
+                case SUB -> "-";
+                case DIV -> "/";
+                case MUL -> "*";
+            };
         }
     }
 
@@ -39,6 +75,7 @@ public class Calculator {
         /*
          * Public constructor of the calculator .
          */
+        op_count=0;
 
     }
 
@@ -48,7 +85,8 @@ public class Calculator {
          * Clean the internal state of the calculator
          */
         op_count = 0;
-        opList.clear();
+        if (this.opList!=null) opList.clear();
+
     }
 
     public void addOperation(String operation, float... values) {
@@ -66,36 +104,25 @@ public class Calculator {
          * @throws IllegalArgumentException If the operation does not exist .
          */
 
-        float op1, op2;
+        operations sign = switch (operation) {
+            case "+" -> SUM;
+            case "-" -> SUB;
+            case "*" -> MUL;
+            case "/" -> DIV;
+            default -> throw new IllegalArgumentException();
+        };
+
+        op item;
         if (op_count == 0) {
-            op1 = values[0];
-            op2 = values[1];
 
-        } else {
-            op2 = values[0];
-        }
+            op firstItem = new op(values[0]);
+            opList.add(firstItem);
 
-        switch (operation) {
-            case "+":
-                opList.add(SUM);
-                break;
+            item= new op(sign,values[1]);
 
-            case "-":
-                opList.add(SUB);
-                break;
+        } else item = new op(sign, values[0]);
 
-            case "*":
-                opList.add(MUL);
-                break;
-
-            case "/":
-                opList.add(DIV);
-                break;
-
-            default:
-                throw new IllegalArgumentException();
-        }
-
+        opList.add(item);
         op_count++;
 
     }
@@ -116,15 +143,24 @@ public class Calculator {
 
 
         for (int i=0;i<=op_count-1;i++){
-            if (op_count==0 && !opList.isEmpty()){
-                result=opList.get(0).SolveOP(operators[0],operators[1]);
+            if (i==0 && !opList.isEmpty()){
+
+                if (opList.get(1).isError()) {
+                    cleanOperations();
+                    throw new ArithmeticException();
+
+                } else result=opList.get(1).getOperation().SolveOP(opList.get(0).getOperator(),opList.get(1).getOperator());
+
             } else{
-                result=opList.get(i).SolveOP(result,operators[i+1]);
+                if (opList.get(i+1).isError()) {
+                    cleanOperations();
+                    throw new ArithmeticException();
+                } else result=opList.get(i+1).getOperation().SolveOP(result,opList.get(i+1).getOperator());
             }
 
-        }
 
-        op_count = 0;
+        }
+        cleanOperations();
 
         return result;
     }
@@ -138,7 +174,16 @@ public class Calculator {
          * EXAMPLES : JUnit tests
          * @return String of the internal state of the calculator
          */
+        String text="[STATE:";
 
-        return "";
+        for (int i=0;i<op_count;i++){
+            if (i==0 && !opList.isEmpty()){
+
+                text+="["+opList.get(1).getOperation().toString()+"]"+opList.get(0).getOperator()+"_"+opList.get(1).getOperator();
+
+            } else text+="["+opList.get(i+1).getOperation().toString()+"]"+opList.get(i+1).getOperator();
+        }
+
+        return text+"]";
     }
 }

@@ -40,9 +40,6 @@ public class Melody {
 
 
         NoteNode item = new NoteNode(note,accidental,time);
-
-
-
         notelist.add(item);
 
 
