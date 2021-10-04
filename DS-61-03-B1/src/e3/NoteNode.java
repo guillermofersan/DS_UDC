@@ -36,8 +36,8 @@ class NoteNode{
 
         if(Float.compare(that.t, t) == 0 && Objects.equals(note, that.note) && Objects.equals(acc, that.acc)) return true;
         
-        switch (note){
-            case DO:
+        switch (note) {
+            case RE, SOL, LA:
                 switch (acc){
                     case SHARP: if ((note.ordinal()+1 == that.note.ordinal()) && (that.acc == FLAT)) return true; break;
                     case FLAT: if ((note.ordinal()-1 == that.note.ordinal()) && (that.acc == SHARP)) return true; break;
