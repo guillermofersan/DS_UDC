@@ -35,18 +35,10 @@ public class Calculator {
 
             return (this.operation == DIV && this.operator == 0);
         }
-
-
-
     }
 
-
-
     public enum operations {
-        SUM,
-        SUB,
-        DIV,
-        MUL;
+        SUM, SUB, DIV, MUL;
 
         public float SolveOP(float op1, float op2){
 
@@ -58,7 +50,6 @@ public class Calculator {
             };
 
         }
-
         @Override
         public String toString() {
             return switch (this) {
@@ -148,10 +139,10 @@ public class Calculator {
                 if (opList.get(1).isError()) {
                     cleanOperations();
                     throw new ArithmeticException();
-
                 } else result=opList.get(1).getOperation().SolveOP(opList.get(0).getOperator(),opList.get(1).getOperator());
 
             } else{
+
                 if (opList.get(i+1).isError()) {
                     cleanOperations();
                     throw new ArithmeticException();
