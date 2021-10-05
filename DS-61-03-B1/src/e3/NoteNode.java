@@ -36,25 +36,27 @@ class NoteNode{
 
         if(Float.compare(that.t, t) == 0 && Objects.equals(note, that.note) && Objects.equals(acc, that.acc)) return true;
         
-        switch (note) {
-            case RE, SOL, LA:
-                switch (acc){
-                    case SHARP: if ((note.ordinal()+1 == that.note.ordinal()) && (that.acc == FLAT)) return true; break;
-                    case FLAT: if ((note.ordinal()-1 == that.note.ordinal()) && (that.acc == SHARP)) return true; break;
-                    default: break;
-                }
-                break;
-            case MI,SI:
-                switch (acc){
-                    case NATURAL, SHARP: if ((((note.ordinal()+1) % 7) == that.note.ordinal()) && (that.acc.ordinal() == ((acc.ordinal()+2)%3))) return true;
-                    case FLAT:  if ((note.ordinal()-1 == that.note.ordinal()) && (that.acc == SHARP)) return true;
-                } break;
-            case DO, FA:
-                switch (acc){
-                    case NATURAL, FLAT: if ((((note.ordinal()+6) % 7) == that.note.ordinal()) && (that.acc.ordinal() == ((acc.ordinal()+1)%3))) return true;
-                    case SHARP:  if ((note.ordinal()+1 == that.note.ordinal()) && (that.acc == FLAT)) return true;
-                } break;
-        }
+        if (Float.compare(that.t, t) == 0){
+           switch (note) {
+               case RE, SOL, LA:
+                  switch (acc){
+                       case SHARP: if ((note.ordinal()+1 == that.note.ordinal()) && (that.acc == FLAT)) return true; break;
+                        case FLAT: if ((note.ordinal()-1 == that.note.ordinal()) && (that.acc == SHARP)) return true; break;
+                       default: break;
+                    }
+                  break;
+               case MI,SI:
+                   switch (acc){
+                     case NATURAL, SHARP: if ((((note.ordinal()+1) % 7) == that.note.ordinal()) && (that.acc.ordinal() == ((acc.ordinal()+2)%3))) return true;
+                      case FLAT:  if ((note.ordinal()-1 == that.note.ordinal()) && (that.acc == SHARP)) return true;
+                  } break;
+               case DO, FA:
+                    switch (acc){
+                        case NATURAL, FLAT: if ((((note.ordinal()+6) % 7) == that.note.ordinal()) && (that.acc.ordinal() == ((acc.ordinal()+1)%3))) return true;
+                        case SHARP:  if ((note.ordinal()+1 == that.note.ordinal()) && (that.acc == FLAT)) return true;
+                    } break;
+            }
+        }    
         return false;
     }
 
