@@ -63,7 +63,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
 
-        if(index>notelist.size()-1) throw new IllegalArgumentException();
+        if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
         return notelist.get(index).getNote();
 
 }
@@ -75,7 +75,7 @@ public class Melody {
      * @return The accidental on index .
      * @throws IllegalArgumentException if the index is not a valid position .
      */
-        if(index>notelist.size()-1) throw new IllegalArgumentException();
+        if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
         return notelist.get(index).getAcc();
     }
 
@@ -87,7 +87,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
 
-        if(index>notelist.size()-1) throw new IllegalArgumentException();
+        if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
         return notelist.get(index).getT();
     }
 
