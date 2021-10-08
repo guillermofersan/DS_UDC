@@ -114,7 +114,7 @@ public class StringCount {
         char[] characters = password.toCharArray();
         boolean eight=characters.length>=8, upper=false, lower=false, digit=false, special=false;
 
-        /*the loops travels through all word to check if all necessary conditions are fulfilled*/
+        /*the loop travels through all word to check if all necessary conditions are fulfilled*/
         for (char character : characters) {
             if (Character.isLowerCase(character)) lower = true;
             if (Character.isUpperCase(character)) upper = true;
