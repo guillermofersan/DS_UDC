@@ -34,7 +34,6 @@ public class Calculator {
             return operator;
         }
 
-
         public boolean isError(){//checks if the operation to be executed will return an error
             return (this.operation == DIV && this.operator == 0);
         }
@@ -112,15 +111,16 @@ public class Calculator {
             /* If for the first operation only one value is passed as an argument,
              *throws an IllegalArgumentException
              */
-            if (values.length<2) throw new IllegalArgumentException();
-
+            if (values.length<2)
+                throw new IllegalArgumentException();
 
             op firstItem = new op(values[0]);
             opList.add(firstItem);
 
             item= new op(sign,values[1]);
 
-        } else item = new op(sign, values[0]);
+        } else
+            item = new op(sign, values[0]);
 
         opList.add(item);
         op_count++;
@@ -149,17 +149,17 @@ public class Calculator {
                 if (opList.get(1).isError()) {
                     cleanOperations();
                     throw new ArithmeticException();
-                } else result=opList.get(1).getOperation().SolveOP(opList.get(0).getOperator(),opList.get(1).getOperator());
+                } else
+                    result=opList.get(1).getOperation().SolveOP(opList.get(0).getOperator(),opList.get(1).getOperator());
 
             } else{
 
                 if (opList.get(i+1).isError()) {
                     cleanOperations();
                     throw new ArithmeticException();
-                } else result=opList.get(i+1).getOperation().SolveOP(result,opList.get(i+1).getOperator());
+                } else
+                    result=opList.get(i+1).getOperation().SolveOP(result,opList.get(i+1).getOperator());
             }
-
-
         }
         cleanOperations();
 
@@ -179,10 +179,9 @@ public class Calculator {
 
         for (int i=0;i<op_count;i++){
             if (i==0 && !opList.isEmpty()){
-
                 text.append("[").append(opList.get(1).getOperation().toString()).append("]").append(opList.get(0).getOperator()).append("_").append(opList.get(1).getOperator());
-
-            } else text.append("[").append(opList.get(i + 1).getOperation().toString()).append("]").append(opList.get(i + 1).getOperator());
+            } else
+                text.append("[").append(opList.get(i + 1).getOperation().toString()).append("]").append(opList.get(i + 1).getOperator());
         }
 
         return text+"]";

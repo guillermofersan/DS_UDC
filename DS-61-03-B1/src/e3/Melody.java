@@ -47,7 +47,8 @@ public class Melody {
          * or the time are not valid values .
          */
 
-        if (note==null || accidental==null || time<=0) throw new IllegalArgumentException();
+        if (note==null || accidental==null || time<=0)
+            throw new IllegalArgumentException();
         //if any of the parameters is not valid, an IllegalArgumentException is thrown
 
         NoteNode item = new NoteNode(note,accidental,time);
@@ -64,7 +65,8 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
 
-        if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
+        if((index>notelist.size()-1) || index<0 )
+            throw new IllegalArgumentException();
         //trying to get a note out of the melody
 
         return notelist.get(index).getNote();
@@ -78,7 +80,8 @@ public class Melody {
      * @return The accidental on index .
      * @throws IllegalArgumentException if the index is not a valid position .
      */
-        if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
+        if((index>notelist.size()-1) || index<0 )
+            throw new IllegalArgumentException();
         //trying to get an acc out of the melody
 
         return notelist.get(index).getAcc();
@@ -92,7 +95,8 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
 
-        if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
+        if((index>notelist.size()-1) || index<0 )
+            throw new IllegalArgumentException();
         //trying to get a time out of the melody
 
 
@@ -158,7 +162,8 @@ public class Melody {
 
 
         for (int i=0; i<notelist.size();i++){
-            if (i!=0) string.append(" ");
+            if (i!=0)
+                string.append(" ");
             string.append(notelist.get(i).getNote().toString()).append(notelist.get(i).getAcc().toString()).append("(").append(notelist.get(i).getT()).append(")");
         }
 
