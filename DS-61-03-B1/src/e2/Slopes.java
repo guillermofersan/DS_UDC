@@ -20,10 +20,10 @@ public class Slopes
          * - down >= number of rows of the matrix or down < 1
          */
 
-        boolean isValidMap=true;
+
         int rows;
 
-        /*Checking if the map is valid*/
+        /*Checking if the map is valid, if it is not, it throws an IllegalArgumentException*/
         rows=slopeMap.length;
         for (int i=0; i<rows; i++){
             if(slopeMap[i].length!=rows) throw new IllegalArgumentException();
@@ -39,13 +39,11 @@ public class Slopes
         }
 
 
-        if(!isValidMap) throw new IllegalArgumentException();
-
-        /*ejercicio*/
         int yPos=0, xPos=0, nrows=rows, ncols=slopeMap[0].length, treecount=0;
 
         boolean finish=false;
 
+        /*Loop in which each iteration is a movement including down and right movements*/
         while(!finish){
 
             for(int i=1; i<=right; i++){
@@ -61,7 +59,6 @@ public class Slopes
                 if (yPos==nrows-1) {
                     finish=true;
                     break;
-                    //return treecount;
                 } else yPos++;
 
                 if(slopeMap[yPos][xPos]=='#') treecount++;
@@ -81,7 +78,7 @@ public class Slopes
          *
          * Params , return value and thrown expections as in downTheSlope ...
          */
-        boolean isValidMap=true;
+
         int rows;
 
         /*Checking if the map is valid*/
@@ -100,13 +97,13 @@ public class Slopes
         }
 
 
-        if(!isValidMap) throw new IllegalArgumentException();
 
-        /*ejercicio*/
+
         int yPos=0, xPos=0, nrows=rows, ncols=slopeMap[0].length, treecount=0;
 
         boolean finish=false;
 
+        /*Loop in which each iteration is a movement including down and right movements*/
         while(!finish){
 
             for(int i=1; i<=right; i++){

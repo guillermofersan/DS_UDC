@@ -35,7 +35,10 @@ class NoteNode{
         NoteNode that = (NoteNode) o;
 
         if(Float.compare(that.t, t) == 0 && Objects.equals(note, that.note) && Objects.equals(acc, that.acc)) return true;
-        
+
+        /*Time is compared, if both notes have the same time, the exceptional cases of equivalence of notes and accidentals are compared */
+
+
         if (Float.compare(that.t, t) == 0){
            switch (note) {
                case RE, SOL, LA:
@@ -64,6 +67,7 @@ class NoteNode{
     @Override
     public int hashCode() {
 
+        /*On the exceptional cases the hashcode is equaled to the hashcode of its equivalent note*/
         switch (note){
             case DO, RE, FA, SOL, LA:
                 if (acc==SHARP) return Objects.hash(Notes.values()[note.ordinal()+1],FLAT,t);

@@ -23,9 +23,12 @@ public class StringCount {
         char[] characters = text.toCharArray();
 
         for (int i = 0; i < characters.length; i++) {
-
+            /* loop travels through all the characters in the phrase and checks if it is a whitespace,
+             * if the previous characters were a word, the word counter is incremented
+             */
 
             if (!Character.isWhitespace(characters[i]) && i != stringlength) isWord = true;
+
 
             else if (Character.isWhitespace(characters[i]) && isWord) {
                 wordCount++;
@@ -55,6 +58,9 @@ public class StringCount {
         int count=0;
 
         for (char character : characters) {
+            /* In each iteration it is checked if the character is the one
+             * we want to count and if it is, increment the total sum
+             */
 
             if (character == c) count++;
 
@@ -77,6 +83,7 @@ public class StringCount {
         int count=0;
 
         for (char character : characters) {
+            /*Counts every character excluding the Upper/lower case*/
 
             if (character == Character.toLowerCase(c) || character == Character.toUpperCase(c)) count++;
 
@@ -107,6 +114,7 @@ public class StringCount {
         char[] characters = password.toCharArray();
         boolean eight=characters.length>=8, upper=false, lower=false, digit=false, special=false;
 
+        /*the loops travels through all word to check if all necessary conditions are fulfilled*/
         for (char character : characters) {
             if (Character.isLowerCase(character)) lower = true;
             if (Character.isUpperCase(character)) upper = true;

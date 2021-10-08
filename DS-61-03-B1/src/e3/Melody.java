@@ -48,7 +48,7 @@ public class Melody {
          */
 
         if (note==null || accidental==null || time<=0) throw new IllegalArgumentException();
-
+        //if any of the parameters is not valid, an IllegalArgumentException is thrown
 
         NoteNode item = new NoteNode(note,accidental,time);
         notelist.add(item);
@@ -65,6 +65,8 @@ public class Melody {
      */
 
         if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
+        //trying to get a note out of the melody
+
         return notelist.get(index).getNote();
 
 }
@@ -77,6 +79,8 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position .
      */
         if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
+        //trying to get an acc out of the melody
+
         return notelist.get(index).getAcc();
     }
 
@@ -89,6 +93,9 @@ public class Melody {
      */
 
         if((index>notelist.size()-1) || index<0 ) throw new IllegalArgumentException();
+        //trying to get a time out of the melody
+
+
         return notelist.get(index).getT();
     }
 
@@ -110,9 +117,11 @@ public class Melody {
         float totalTime=0;
 
 
-        for (NoteNode noteNode : notelist) {
+        for (NoteNode noteNode : notelist) {//in each iteration it sums the time of each note of the melody
+
             totalTime += noteNode.getT();
         }
+
 
         return totalTime;
     }
@@ -128,23 +137,15 @@ public class Melody {
          * @return true if the melodies are equals , false otherwise .
          */
 
-
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Melody melody = (Melody) o;
         return Objects.equals(notelist, melody.notelist);
-
-
-
     }
 
     @Override
     public int hashCode() {
-
-
         return Objects.hash(notelist);
-
-
     }
 
     @Override
