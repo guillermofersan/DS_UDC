@@ -11,6 +11,9 @@ public class Calculator {
     ArrayList<op> opList = new ArrayList<>();
 
     public class op{
+
+        //A class operation is created to include a operator (float) and a sign(enum operations)
+
         operations operation;
         float operator;
 
@@ -31,8 +34,8 @@ public class Calculator {
             return operator;
         }
 
-        public boolean isError(){
 
+        public boolean isError(){//checks if the operation to be executed will return an error
             return (this.operation == DIV && this.operator == 0);
         }
     }
@@ -106,6 +109,12 @@ public class Calculator {
         op item;
         if (op_count == 0) {
 
+            /* If for the first operation only one value is passed as an argument,
+             *throws an IllegalArgumentException
+             */
+            if (values.length<2) throw new IllegalArgumentException();
+
+
             op firstItem = new op(values[0]);
             opList.add(firstItem);
 
@@ -136,6 +145,7 @@ public class Calculator {
         for (int i=0;i<=op_count-1;i++){
             if (i==0 && !opList.isEmpty()){
 
+                /*For the first operations it opers the two first operands with the first operator(which is stored on the second element of the arrayList)*/
                 if (opList.get(1).isError()) {
                     cleanOperations();
                     throw new ArithmeticException();
