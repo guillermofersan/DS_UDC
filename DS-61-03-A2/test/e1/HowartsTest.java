@@ -1,54 +1,82 @@
 package e1;
 
-//import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-public class HowartsTest {
-    @Test
-    public void countWords() {
-        assertEquals(0, StringCount.countWords(null));
-        assertEquals(1, StringCount.countWords("OneWord"));
-        assertEquals(2, StringCount.countWords("Two words"));
-        assertEquals(4, StringCount.countWords("spaces at the end     "));
-        assertEquals(4, StringCount.countWords("    many    spaces   between      words   "));
-        assertEquals(1, StringCount.countWords("words,separated-by.special$characters@"));
-        assertEquals(10, StringCount.countWords("Normal text a little long with CAPITALS and lowercase letters"));
-        assertEquals(7, StringCount.countWords("Oración en español con eñe y acentos"));
+/*
+ * Main test class for Calculator (JUnit 5)
+ *
+ * @author Iñigo L.R.B
+ *
+ */
+
+class HowartsTest {
+
+
+    private final School school = new School();
+
+    @BeforeEach
+    void setUp() {
+        new Residents("Nombre1","Apellido1")
     }
 
+    //test addition of operations, batch execution and check the internal state of calculator (operands and operations).
     @Test
-    public void countChar() {
-        assertEquals(0, StringCount.countChar(null, 'a'));
-        assertEquals(2, StringCount.countChar("Timeo Danaos et dona ferentes", 't'));
-        assertEquals(3, StringCount.countChar("Romani ite domum", 'm'));
-        assertEquals(1, StringCount.countChar("Mater tua mala burra est", 'M'));
-        assertEquals(1, StringCount.countChar("Ñandú Cañón", 'ñ'));
-        assertEquals(1, StringCount.countChar("Un Ñandú Único", 'ú'));
+    void testOperations() {
+        float result;
+
+        // Division by zero
+        calculator.addOperation("/", 6, 0);
+        assertThrows(ArithmeticException.class, calculator::executeOperations);
+        // Internal state is restored (even if exception occurs).
+        assertEquals("[STATE:]", calculator.toString());
+
+        // The operation does not exist (input string has not a match)
+        assertThrows(IllegalArgumentException.class, () -> calculator.addOperation("#", 5, 2));
+        // Internal state is restored (even if exception occurs).
+        assertEquals("[STATE:]", calculator.toString());
+
+        // Add operations, calculate internal state representation (string pattern) and execute them as a single batch
+        calculator.addOperation("+", 4.5f, 6.8f);
+        calculator.addOperation("-", 3.1f);
+        calculator.addOperation("/", 6f);
+        assertEquals("[STATE:[+]4.5_6.8[-]3.1[/]6.0]", calculator.toString());
+        result = calculator.executeOperations();
+        assertEquals("[STATE:]", calculator.toString()); // state is restored
+        assertEquals(1.366f, result, EPSILON);
+
+        // Same, obtaining negative value
+        calculator.addOperation("-", 3.7f, 5.8f);
+        calculator.addOperation("*", 4.8f);
+        calculator.addOperation("/", 2.0f);
+        calculator.addOperation("+", 2.04f);
+        assertEquals("[STATE:[-]3.7_5.8[*]4.8[/]2.0[+]2.04]", calculator.toString());
+        result = calculator.executeOperations();
+        assertEquals("[STATE:]", calculator.toString()); // state is restored
+        assertEquals(-3f, result, EPSILON);
+
+        // Using clean operations
+
+        calculator.addOperation("-", 5.2f, 4.1f);
+        calculator.addOperation("*", 3.256987f);
+        assertEquals("[STATE:[-]5.2_4.1[*]3.256987]", calculator.toString());
+        calculator.cleanOperations();
+        assertEquals("[STATE:]", calculator.toString()); // state is restored
+        calculator.addOperation("/", 8.4f, 5.6f);
+        calculator.addOperation("+", 15.23f);
+        assertEquals("[STATE:[/]8.4_5.6[+]15.23]", calculator.toString());
+        result = calculator.executeOperations();
+        assertEquals(16.73f, result, EPSILON);
+
+        // Ignore unnecessary second parameter (it is not the first operation to be added), using integer values
+        calculator.addOperation("+", 5f, 3f);
+        calculator.addOperation("*", 2f, 6f); // 6f is ignored
+        assertEquals("[STATE:[+]5.0_3.0[*]2.0]", calculator.toString());
+        result = calculator.executeOperations();
+        assertEquals(16f, result, EPSILON);
+
     }
-
-    @Test
-    public void countCharIgnoringCase() {
-        assertEquals(0, StringCount.countCharIgnoringCase(null, 'a'));
-        assertEquals(3, StringCount.countCharIgnoringCase("Timeo Danaos et dona ferentes", 't'));
-        assertEquals(3, StringCount.countCharIgnoringCase("Romani ite domum", 'm'));
-        assertEquals(2, StringCount.countCharIgnoringCase("Mater tua mala burra est", 'M'));
-        assertEquals(2, StringCount.countCharIgnoringCase("Ñandú Cañon", 'ñ'));
-        assertEquals(2, StringCount.countCharIgnoringCase("Un Ñandú Único", 'ú'));
-    }
-
-
-
-    @Test
-    public void isPasswordSafe() {
-        assertFalse(StringCount.isPasswordSafe("123456")); // less than 8
-        assertFalse(StringCount.isPasswordSafe("WHAT'S UP, DOC?")); // No lowercase
-        assertFalse(StringCount.isPasswordSafe("what's up, doc?")); // No uppercase
-        assertFalse(StringCount.isPasswordSafe("What's Up, Doc?")); // No digit
-        assertFalse(StringCount.isPasswordSafe("What's Up Doc")); // No special
-        assertFalse(StringCount.isPasswordSafe("Doc? 5")); // less than 8
-        assertTrue(StringCount.isPasswordSafe("What's Up, Doc? 5")); // OK
-    }
-
-
 }
+

@@ -1,13 +1,22 @@
 package e1;
 
-public class Staff extends Members{
+import java.lang.reflect.Member;
 
-    enum staffType{Teacher, Gamekeeper, Caretaker}
+abstract public class Staff extends Members{
 
-    staffType type;
+    float baseSalary;
 
-    public Staff(String memberName, staffType type) {
-        super(memberName);
-        this.type = type;
+    public Staff(String memberName, String memberSurname, int age, int horrocruxCount) {
+        super(memberName, memberSurname, age, horrocruxCount);
     }
+
+    abstract float getSalary();
+
+    String printSalary(){
+
+        return memberName + " " + memberSurname
+                + " ( " +  catString() + " ): "
+                + getSalary() + " galleons";
+    }
+
 }
