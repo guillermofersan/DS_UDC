@@ -1,6 +1,6 @@
 package e1;
 
-enum Category{ghost,student,gamekeeper,caretaker,teacher}
+
 
 abstract public class Members {
 
@@ -8,9 +8,13 @@ abstract public class Members {
     String memberSurname;
     int age;
     int horcruxCount;
-    Category cat;
+
+    private void isValidMember(String name, String surname, int age, int horcruxes){
+        if (name==null || surname==null || age<=0 || horcruxes<0) throw new IllegalArgumentException();
+    }
 
     public Members(String memberName, String memberSurname, int age, int horrocruxCount) {
+        isValidMember(memberName,memberSurname,age,horrocruxCount);
         this.memberName = memberName;
         this.memberSurname = memberSurname;
         this.age = age;
@@ -24,7 +28,7 @@ abstract public class Members {
     String printRewards(){
 
         return memberName + " " + memberSurname
-                + " ( " +  catString() + " ): "
+                + " ( " +  catString() + ", "+horcruxCount +" horcruxes ): "
                 + getreward() + " galleons";
     }
 

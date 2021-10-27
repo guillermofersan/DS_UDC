@@ -5,78 +5,62 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/*
- * Main test class for Calculator (JUnit 5)
- *
- * @author Iñigo L.R.B
- *
- */
-
 class HowartsTest {
 
-
-    private final School school = new School();
+    private School school, emptySchool;
 
     @BeforeEach
     void setUp() {
-        new Residents("Nombre1","Apellido1")
+        school = new School();
+        school.addStudent("Hermione","Granger", 18, 3, Resident.ResidentHouse.Gryffindor);
+        school.addGhost("Bloody","Baron",109,1,Resident.ResidentHouse.Slytherin);
+        school.addGamekeeper("Rubeus","Hagrid",45,2);
+        school.addTeacher("Minerva", "McGonagall",52, 1, Teacher.subjects.Transfiguration);
+        school.addTeacher("Severus", "Snape",42, 2, Teacher.subjects.Defence);
+        school.addCaretaker("Argus","Filch",2,0);
+
+        emptySchool = new School();
     }
 
-    //test addition of operations, batch execution and check the internal state of calculator (operands and operations).
+
     @Test
-    void testOperations() {
-        float result;
+    void testInvalidMember(){
 
-        // Division by zero
-        calculator.addOperation("/", 6, 0);
-        assertThrows(ArithmeticException.class, calculator::executeOperations);
-        // Internal state is restored (even if exception occurs).
-        assertEquals("[STATE:]", calculator.toString());
-
-        // The operation does not exist (input string has not a match)
-        assertThrows(IllegalArgumentException.class, () -> calculator.addOperation("#", 5, 2));
-        // Internal state is restored (even if exception occurs).
-        assertEquals("[STATE:]", calculator.toString());
-
-        // Add operations, calculate internal state representation (string pattern) and execute them as a single batch
-        calculator.addOperation("+", 4.5f, 6.8f);
-        calculator.addOperation("-", 3.1f);
-        calculator.addOperation("/", 6f);
-        assertEquals("[STATE:[+]4.5_6.8[-]3.1[/]6.0]", calculator.toString());
-        result = calculator.executeOperations();
-        assertEquals("[STATE:]", calculator.toString()); // state is restored
-        assertEquals(1.366f, result, EPSILON);
-
-        // Same, obtaining negative value
-        calculator.addOperation("-", 3.7f, 5.8f);
-        calculator.addOperation("*", 4.8f);
-        calculator.addOperation("/", 2.0f);
-        calculator.addOperation("+", 2.04f);
-        assertEquals("[STATE:[-]3.7_5.8[*]4.8[/]2.0[+]2.04]", calculator.toString());
-        result = calculator.executeOperations();
-        assertEquals("[STATE:]", calculator.toString()); // state is restored
-        assertEquals(-3f, result, EPSILON);
-
-        // Using clean operations
-
-        calculator.addOperation("-", 5.2f, 4.1f);
-        calculator.addOperation("*", 3.256987f);
-        assertEquals("[STATE:[-]5.2_4.1[*]3.256987]", calculator.toString());
-        calculator.cleanOperations();
-        assertEquals("[STATE:]", calculator.toString()); // state is restored
-        calculator.addOperation("/", 8.4f, 5.6f);
-        calculator.addOperation("+", 15.23f);
-        assertEquals("[STATE:[/]8.4_5.6[+]15.23]", calculator.toString());
-        result = calculator.executeOperations();
-        assertEquals(16.73f, result, EPSILON);
-
-        // Ignore unnecessary second parameter (it is not the first operation to be added), using integer values
-        calculator.addOperation("+", 5f, 3f);
-        calculator.addOperation("*", 2f, 6f); // 6f is ignored
-        assertEquals("[STATE:[+]5.0_3.0[*]2.0]", calculator.toString());
-        result = calculator.executeOperations();
-        assertEquals(16f, result, EPSILON);
+        assertThrows(IllegalArgumentException.class, () -> school.addStudent(null, "apellido", 17,3, Resident.ResidentHouse.Slytherin));
+        assertThrows(IllegalArgumentException.class, () -> school.addGhost("nombre", null, 17,3, Resident.ResidentHouse.Gryffindor));
+        assertThrows(IllegalArgumentException.class, () -> school.addStudent("nombre", "apellido", -3,3, Resident.ResidentHouse.Hufflepuff));
+        assertThrows(IllegalArgumentException.class, () -> school.addStudent(null, "apellido", 17,-18, Resident.ResidentHouse.Ravenclaw));
 
     }
+
+    @Test
+    void testRewards() {
+
+        assertEquals("""
+                Hermione Granger ( Student of Gryffindor, 3 horcruxes ): 270.0 galleons
+                Bloody Baron ( Ghost of Slytherin, 1 horcruxes ): 160.0 galleons
+                Rubeus Hagrid ( Gamekeeper, 2 horcruxes ): 150.0 galleons
+                Minerva McGonagall ( Teacher of Transfiguration, 1 horcruxes ): 50.0 galleons
+                Severus Snape ( Teacher of Defence, 2 horcruxes ): 75.0 galleons
+                Argus Filch ( Caretaker, 0 horcruxes ): 0.0 galleons
+                The total reward for Hogwarts School is 705.0 galleons""", school.printRewards());
+
+        assertEquals("There are no members on this school: The total reward for Hogwarts School is 0.0 galleons",emptySchool.printRewards());
+    }
+
+    @Test
+    void testSalaries() {
+
+        assertEquals("""
+                Rubeus Hagrid ( Gamekeeper ): 180 galleons
+                Minerva McGonagall ( Teacher of Transfiguration ): 400 galleons
+                Severus Snape ( Teacher of Defence ): 500 galleons
+                Argus Filch ( Caretaker ): 160 galleons
+                The total payroll for Hogwarts School is 1240 galleons""", school.printSalaries());
+
+        assertEquals("There is no staff on this school: The total payroll for Hogwarts School is 0 galleons",emptySchool.printSalaries());
+
+    }
+
 }
 

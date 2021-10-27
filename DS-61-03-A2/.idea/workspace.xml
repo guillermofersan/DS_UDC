@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="Created classes for each member and created class School">
+      <change beforePath="$PROJECT_DIR$/src/e1/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Caretaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Gamekeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Gamekeeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Members.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Members.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Residents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/School.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Teachers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e1/HowartsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/e1/HowartsTest.java" afterDir="false" />
+    </list>
+    <list id="a5be2dec-aa42-42b7-a451-9011bdeacc81" name="Changes by Javier" comment="">
+      <change beforePath="$PROJECT_DIR$/src/e1/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/School.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/e1/School.java">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="3" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="8" end1="9" start2="7" end2="9" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="11" end1="12" start2="11" end2="21" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="14" end1="15" start2="23" end2="26" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="16" end1="17" start2="27" end2="30" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="18" end1="18" start2="31" end2="33" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="22" end1="23" start2="37" end2="54" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="26" end1="26" start2="57" end2="58" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="28" end1="29" start2="60" end2="73" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="30" end1="31" start2="74" end2="74" changelist="196e92ab-5238-45d5-8722-969076a56676" />
+        <range start1="32" end1="32" start2="75" end2="78" changelist="a5be2dec-aa42-42b7-a451-9011bdeacc81" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProjectId" id="1zfJfQCtmxRe0ApAmpSU45Y96RZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="e1" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.HowartsTest">
+    <configuration name="HowartsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-A2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e1" />
+      <option name="MAIN_CLASS_NAME" value="e1.HowartsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HowartsTest.testBasic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-A2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e1" />
+      <option name="MAIN_CLASS_NAME" value="e1.HowartsTest" />
+      <option name="METHOD_NAME" value="testBasic" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HowartsTest.testInvalidMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-A2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e1" />
+      <option name="MAIN_CLASS_NAME" value="e1.HowartsTest" />
+      <option name="METHOD_NAME" value="testInvalidMember" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HowartsTest.testRewards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-A2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e1" />
+      <option name="MAIN_CLASS_NAME" value="e1.HowartsTest" />
+      <option name="METHOD_NAME" value="testRewards" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HowartsTest.testSalaries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-A2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e1" />
+      <option name="MAIN_CLASS_NAME" value="e1.HowartsTest" />
+      <option name="METHOD_NAME" value="testSalaries" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HowartsTest" />
+        <item itemvalue="JUnit.HowartsTest.testSalaries" />
+        <item itemvalue="JUnit.HowartsTest.testRewards" />
+        <item itemvalue="JUnit.HowartsTest.testInvalidMember" />
+        <item itemvalue="JUnit.HowartsTest.testBasic" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="" />
+      <created>1634533312745</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634533312745</updated>
+      <workItem from="1635346095851" duration="6064000" />
+    </task>
+    <task id="LOCAL-00001" summary="created folder for Assignment 2">
+      <created>1634533436916</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634533436916</updated>
+    </task>
+    <task id="LOCAL-00002" summary="created folder for Assignment 2">
+      <created>1634533661380</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634533661380</updated>
+    </task>
+    <task id="LOCAL-00003" summary="created test folder">
+      <created>1634541360620</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634541360620</updated>
+    </task>
+    <task id="LOCAL-00004" summary="created test folder">
+      <created>1634544049046</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634544049046</updated>
+    </task>
+    <task id="LOCAL-00005" summary="created test folder">
+      <created>1634545490940</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634545490940</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Created classes for each member and created class School">
+      <created>1635150836527</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635150836527</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created folder for Assignment 2" />
+    <MESSAGE value="created test folder" />
+    <MESSAGE value="Created classes for each member and created class School" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created classes for each member and created class School" />
+  </component>
+</project>

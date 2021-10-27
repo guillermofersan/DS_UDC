@@ -4,7 +4,7 @@ public class Gamekeeper extends Staff{
 
     public Gamekeeper(String memberName, String memberSurname, int age, int horrocruxCount) {
         super(memberName, memberSurname, age, horrocruxCount);
-        super.cat=Category.gamekeeper;
+        //super.cat=Category.gamekeeper;
         baseSalary=170;
     }
 
@@ -12,7 +12,7 @@ public class Gamekeeper extends Staff{
         return 75*horcruxCount;
     }
 
-    float getSalary() {
+    int getSalary() {
         return baseSalary+10;
     }
 

@@ -4,7 +4,7 @@ public class Caretaker extends Staff{
 
     public Caretaker(String memberName, String memberSurname, int age, int horrocruxCount) {
         super(memberName, memberSurname, age, horrocruxCount);
-        super.cat=Category.caretaker;
+        //super.cat=Category.caretaker;
         baseSalary=150;
     }
 
@@ -12,7 +12,7 @@ public class Caretaker extends Staff{
         return 65*horcruxCount;
     }
 
-    float getSalary() {
+    int getSalary() {
         return baseSalary+10;
     }
 
