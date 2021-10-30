@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="Created classes for each member and created class School">
-      <change beforePath="$PROJECT_DIR$/src/e1/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Caretaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Gamekeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Gamekeeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Members.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Members.java" afterDir="false" />
+    <list default="true" id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="Finished e1">
+      <change afterPath="$PROJECT_DIR$/src/e2/Advertisement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2/AdvertisementComparators.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2/ApartmentApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e2/ApartmentAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/e1/Residents.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Staff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/e1/Teachers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/e1/HowartsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/e1/HowartsTest.java" afterDir="false" />
     </list>
     <list id="a5be2dec-aa42-42b7-a451-9011bdeacc81" name="Changes by Javier" comment="">
       <change beforePath="$PROJECT_DIR$/src/e1/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/School.java" afterDir="false" />
@@ -19,6 +18,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -39,30 +39,16 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/e1/School.java">
-      <ranges>
-        <range start1="3" end1="4" start2="3" end2="3" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="8" end1="9" start2="7" end2="9" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="11" end1="12" start2="11" end2="21" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="14" end1="15" start2="23" end2="26" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="16" end1="17" start2="27" end2="30" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="18" end1="18" start2="31" end2="33" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="22" end1="23" start2="37" end2="54" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="26" end1="26" start2="57" end2="58" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="28" end1="29" start2="60" end2="73" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="30" end1="31" start2="74" end2="74" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="32" end1="32" start2="75" end2="78" changelist="a5be2dec-aa42-42b7-a451-9011bdeacc81" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectId" id="1zfJfQCtmxRe0ApAmpSU45Y96RZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -75,10 +61,24 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="e2" />
       <recent name="e1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HowartsTest">
+  <component name="RunManager" selected="Application.ApartmentApp">
+    <configuration name="ApartmentApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="e2.ApartmentApp" />
+      <module name="DS-61-03-A2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HowartsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-A2" />
       <extension name="coverage">
@@ -90,22 +90,6 @@
       <option name="PACKAGE_NAME" value="e1" />
       <option name="MAIN_CLASS_NAME" value="e1.HowartsTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HowartsTest.testBasic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DS-61-03-A2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="e1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="e1" />
-      <option name="MAIN_CLASS_NAME" value="e1.HowartsTest" />
-      <option name="METHOD_NAME" value="testBasic" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ApartmentApp" />
         <item itemvalue="JUnit.HowartsTest" />
         <item itemvalue="JUnit.HowartsTest.testSalaries" />
         <item itemvalue="JUnit.HowartsTest.testRewards" />
         <item itemvalue="JUnit.HowartsTest.testInvalidMember" />
-        <item itemvalue="JUnit.HowartsTest.testBasic" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +160,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634533312745</updated>
-      <workItem from="1635346095851" duration="6064000" />
+      <workItem from="1635346095851" duration="6419000" />
+      <workItem from="1635605284019" duration="7317000" />
     </task>
     <task id="LOCAL-00001" summary="created folder for Assignment 2">
       <created>1634533436916</created>
@@ -220,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635150836527</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finished e1">
+      <created>1635352443525</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635352443525</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,9 +231,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="created folder for Assignment 2" />
     <MESSAGE value="created test folder" />
     <MESSAGE value="Created classes for each member and created class School" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created classes for each member and created class School" />
+    <MESSAGE value="Finished e1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished e1" />
   </component>
 </project>
