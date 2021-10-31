@@ -29,7 +29,11 @@ class HowartsTest {
         assertThrows(IllegalArgumentException.class, () -> school.addStudent(null, "apellido", 17,3, Resident.ResidentHouse.Slytherin));
         assertThrows(IllegalArgumentException.class, () -> school.addGhost("nombre", null, 17,3, Resident.ResidentHouse.Gryffindor));
         assertThrows(IllegalArgumentException.class, () -> school.addStudent("nombre", "apellido", -3,3, Resident.ResidentHouse.Hufflepuff));
-        assertThrows(IllegalArgumentException.class, () -> school.addStudent(null, "apellido", 17,-18, Resident.ResidentHouse.Ravenclaw));
+        assertThrows(IllegalArgumentException.class, () -> school.addGhost(null, "apellido", 17,-18, Resident.ResidentHouse.Ravenclaw));
+
+        // Test to check that more than one teacher of the same subject is not allowed
+        assertThrows(IllegalArgumentException.class, () -> school.addTeacher("Remus", "Lupin", 38,3, Teacher.subjects.Defence));
+
 
     }
 
@@ -43,7 +47,8 @@ class HowartsTest {
                 Minerva McGonagall ( Teacher of Transfiguration, 1 horcruxes ): 50.0 galleons
                 Severus Snape ( Teacher of Defence, 2 horcruxes ): 75.0 galleons
                 Argus Filch ( Caretaker, 0 horcruxes ): 0.0 galleons
-                The total reward for Hogwarts School is 705.0 galleons""", school.printRewards());
+                Filch's cat ( Caretaker, 1 horcruxes ): 65.0 galleons
+                The total reward for Hogwarts School is 770.0 galleons""", school.printRewards());
 
         assertEquals("There are no members on this school: The total reward for Hogwarts School is 0.0 galleons",emptySchool.printRewards());
     }
@@ -56,7 +61,8 @@ class HowartsTest {
                 Minerva McGonagall ( Teacher of Transfiguration ): 400 galleons
                 Severus Snape ( Teacher of Defence ): 500 galleons
                 Argus Filch ( Caretaker ): 160 galleons
-                The total payroll for Hogwarts School is 1240 galleons""", school.printSalaries());
+                Filch's cat ( Caretaker ): 160 galleons
+                The total payroll for Hogwarts School is 1400 galleons""", school.printSalaries());
 
         assertEquals("There is no staff on this school: The total payroll for Hogwarts School is 0 galleons",emptySchool.printSalaries());
 

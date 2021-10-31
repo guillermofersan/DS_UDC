@@ -2,6 +2,7 @@ package e1;
 
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class School {
 
@@ -14,14 +15,22 @@ public class School {
     }
 
     void addStudent(String name, String surname, int age, int horcruxes, Resident.ResidentHouse house){
-        residentList.add(new Resident(name,surname,age,horcruxes,house, Resident.Category.Student));
+        residentList.add(new Student(name,surname,age,horcruxes,house));
     }
 
     void addGhost(String name, String surname, int age, int horcruxes, Resident.ResidentHouse house){
-        residentList.add(new Resident(name,surname,age,horcruxes,house,Resident.Category.Ghost));
+        residentList.add(new Ghost(name,surname,age,horcruxes,house));
     }
 
     void addTeacher(String name, String surname, int age, int horcruxes, Teacher.subjects subj){
+
+        for (Staff s: staffList){
+            if (Objects.equals(s.catString(), "Teacher of " + subj))
+                throw new IllegalArgumentException();
+        }
+
+
+
         staffList.add(new Teacher(name, surname, age, horcruxes, subj));
     }
 

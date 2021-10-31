@@ -1,7 +1,5 @@
 package e1;
 
-
-
 abstract public class Members {
 
     String memberName;
@@ -31,5 +29,4 @@ abstract public class Members {
                 + " ( " +  catString() + ", "+horcruxCount +" horcruxes ): "
                 + getreward() + " galleons";
     }
-
 }

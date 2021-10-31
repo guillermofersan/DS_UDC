@@ -24,10 +24,15 @@ public class Advertisement implements Comparable<Advertisement>{
         this.location=location;
 
         if (parkingPrices.length!=parkingSpots) throw new IllegalArgumentException();
+
         ParkingPrices = new ArrayList<>();
         for (int i=0;i<parkingSpots;i++){
             ParkingPrices.add(parkingPrices[i]);
         }
+
+        if (location==null || basePrice<=0 || size <=0 || beds<=0 || ParkingPrices.stream().anyMatch(i -> i<=0))
+            throw new IllegalArgumentException();
+
         ParkingPrices.sort(Comparator.naturalOrder());
     }
 
