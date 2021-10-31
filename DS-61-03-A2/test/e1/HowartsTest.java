@@ -17,7 +17,8 @@ class HowartsTest {
         school.addGamekeeper("Rubeus","Hagrid",45,2);
         school.addTeacher("Minerva", "McGonagall",52, 1, Teacher.subjects.Transfiguration);
         school.addTeacher("Severus", "Snape",42, 2, Teacher.subjects.Defence);
-        school.addCaretaker("Argus","Filch",2,0);
+        school.addCaretaker("Argus","Filch",60,0);
+        school.addCaretaker("Filch's","cat",2,1);
 
         emptySchool = new School();
     }
