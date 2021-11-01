@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="Finished e2 without tests">
+    <list default="true" id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="Finished e2 with tests">
+      <change afterPath="$PROJECT_DIR$/src/e3/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e3/NetworkManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e3/NetworkMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e3/NetworkTables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e3/TopicOfInterest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/e3/NetworkTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Caretaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Gamekeeper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Members.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Members.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Resident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Resident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Teacher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/Advertisement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Advertisement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/ApartmentApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/ApartmentApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/e1/HowartsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/e1/HowartsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/e2/ApartmentAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/e2/ApartmentAppTest.java" afterDir="false" />
     </list>
     <list id="a5be2dec-aa42-42b7-a451-9011bdeacc81" name="Changes by Javier" comment="">
       <change beforePath="$PROJECT_DIR$/src/e1/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/School.java" afterDir="false" />
@@ -29,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -43,25 +39,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/e1/School.java">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="5" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="16" end1="17" start2="17" end2="18" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="20" end1="21" start2="21" end2="22" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="24" end1="24" start2="25" end2="33" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="76" end1="76" start2="85" end2="88" changelist="a5be2dec-aa42-42b7-a451-9011bdeacc81" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/test/e1/HowartsTest.java">
-      <ranges>
-        <range start1="19" end1="20" start2="19" end2="21" changelist="a5be2dec-aa42-42b7-a451-9011bdeacc81" />
-        <range start1="31" end1="32" start2="32" end2="37" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="45" end1="46" start2="50" end2="52" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-        <range start1="58" end1="59" start2="64" end2="66" changelist="196e92ab-5238-45d5-8722-969076a56676" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1zfJfQCtmxRe0ApAmpSU45Y96RZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -89,79 +66,81 @@
       <recent name="e1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApartmentAppTest.TestOrder_All">
-    <configuration name="ApartmentApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="e2.ApartmentApp" />
+  <component name="RunManager" selected="JUnit.NetworkTest">
+    <configuration name="NetworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-A2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="e2.*" />
+          <option name="PATTERN" value="e3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="e3" />
+      <option name="MAIN_CLASS_NAME" value="e3.NetworkTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApartmentAppTest.TestOrder_All" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NetworkTest.Test_AllInterests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-A2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="e2.*" />
+          <option name="PATTERN" value="e3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="e2" />
-      <option name="MAIN_CLASS_NAME" value="e2.ApartmentAppTest" />
-      <option name="METHOD_NAME" value="TestOrder_All" />
+      <option name="PACKAGE_NAME" value="e3" />
+      <option name="MAIN_CLASS_NAME" value="e3.NetworkTest" />
+      <option name="METHOD_NAME" value="Test_AllInterests" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApartmentAppTest.TestOrder_basePrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NetworkTest.Test_compareInterests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-A2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="e2.*" />
+          <option name="PATTERN" value="e3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="e2" />
-      <option name="MAIN_CLASS_NAME" value="e2.ApartmentAppTest" />
-      <option name="METHOD_NAME" value="TestOrder_basePrice" />
+      <option name="PACKAGE_NAME" value="e3" />
+      <option name="MAIN_CLASS_NAME" value="e3.NetworkTest" />
+      <option name="METHOD_NAME" value="Test_compareInterests" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApartmentAppTest.TestOrder_beds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NetworkTest.Test_getInterests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-A2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="e2.*" />
+          <option name="PATTERN" value="e3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="e2" />
-      <option name="MAIN_CLASS_NAME" value="e2.ApartmentAppTest" />
-      <option name="METHOD_NAME" value="TestOrder_beds" />
+      <option name="PACKAGE_NAME" value="e3" />
+      <option name="MAIN_CLASS_NAME" value="e3.NetworkTest" />
+      <option name="METHOD_NAME" value="Test_getInterests" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApartmentAppTest.TestOrder_totalPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NetworkTest.Test_interests2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-A2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="e2.*" />
+          <option name="PATTERN" value="e3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="e2" />
-      <option name="MAIN_CLASS_NAME" value="e2.ApartmentAppTest" />
-      <option name="METHOD_NAME" value="TestOrder_totalPrice" />
+      <option name="PACKAGE_NAME" value="e3" />
+      <option name="MAIN_CLASS_NAME" value="e3.NetworkTest" />
+      <option name="METHOD_NAME" value="Test_interests2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ApartmentAppTest.TestOrder_All" />
-        <item itemvalue="JUnit.ApartmentAppTest.TestOrder_beds" />
-        <item itemvalue="Application.ApartmentApp" />
-        <item itemvalue="JUnit.ApartmentAppTest.TestOrder_totalPrice" />
-        <item itemvalue="JUnit.ApartmentAppTest.TestOrder_basePrice" />
+        <item itemvalue="JUnit.NetworkTest" />
+        <item itemvalue="JUnit.NetworkTest.Test_compareInterests" />
+        <item itemvalue="JUnit.NetworkTest.Test_getInterests" />
+        <item itemvalue="JUnit.NetworkTest.Test_AllInterests" />
+        <item itemvalue="JUnit.NetworkTest.Test_interests2" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +167,9 @@
       <workItem from="1635346095851" duration="6419000" />
       <workItem from="1635605284019" duration="7727000" />
       <workItem from="1635617679369" duration="825000" />
-      <workItem from="1635676381202" duration="6273000" />
+      <workItem from="1635676381202" duration="6551000" />
+      <workItem from="1635700113128" duration="1721000" />
+      <workItem from="1635782007083" duration="11891000" />
     </task>
     <task id="LOCAL-00001" summary="created folder for Assignment 2">
       <created>1634533436916</created>
@@ -246,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635612968142</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Finished e2 with tests">
+      <created>1635682883031</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635682883031</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +259,7 @@
     <MESSAGE value="Created classes for each member and created class School" />
     <MESSAGE value="Finished e1" />
     <MESSAGE value="Finished e2 without tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished e2 without tests" />
+    <MESSAGE value="Finished e2 with tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished e2 with tests" />
   </component>
 </project>
