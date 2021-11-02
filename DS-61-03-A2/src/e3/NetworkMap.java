@@ -1,18 +1,15 @@
 package e3;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class NetworkMap implements NetworkManager{
 
-    HashMap<String, List<TopicOfInterest>> usersMap;
+    LinkedHashMap<String, List<TopicOfInterest>> usersMap;
 
     public NetworkMap() {
 
 
-        usersMap = new HashMap<>();
+        usersMap = new LinkedHashMap<>();
 
     }
 
@@ -37,6 +34,8 @@ public class NetworkMap implements NetworkManager{
     @Override
     public void addInterest(String user, TopicOfInterest topicOfInterest) {
 
+        if (!usersMap.containsKey(user)) throw new IllegalArgumentException();
+
         List<TopicOfInterest> topList = usersMap.get(user);
         topList.add(topicOfInterest);
 
@@ -46,6 +45,8 @@ public class NetworkMap implements NetworkManager{
 
     @Override
     public void removeInterest(String user, TopicOfInterest topicOfInterest) {
+
+        if (!usersMap.containsKey(user)) throw new IllegalArgumentException();
 
         List<TopicOfInterest> topList = usersMap.get(user);
 
@@ -68,15 +69,11 @@ public class NetworkMap implements NetworkManager{
         List<TopicOfInterest> aux, allTopics;
         allTopics = new ArrayList<>();
 
-        Iterator<String> it = usersMap.keySet().iterator();
+        for (String key : usersMap.keySet()) {
+            aux = usersMap.get(key);
 
-        while(it.hasNext()){
-            String key = it.next();
-
-            aux=usersMap.get(key);
-
-            for (TopicOfInterest topic : aux){
-                if (!allTopics.contains(topic)){
+            for (TopicOfInterest topic : aux) {
+                if (!allTopics.contains(topic)) {
                     allTopics.add(topic);
                 }
             }
