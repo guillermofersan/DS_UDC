@@ -5,7 +5,7 @@ package e2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import e2.ApartmentApp.criteria;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -51,6 +51,10 @@ public class ApartmentAppTest {
                  // Test any parking spot with negative value
                  assertThrows(IllegalArgumentException.class, () ->app.insertApartment("Location",120,230,2,3,2,5,-7));
                  assertThrows(IllegalArgumentException.class, () ->app.insertApartment("Location",120,230,2,3,2,0,7));
+
+                // Test wrong index in getAd
+                assertThrows(IllegalArgumentException.class, () ->app.getAd(100));
+
         }
 
 
@@ -66,15 +70,9 @@ public class ApartmentAppTest {
         @Test
         void TestOrder_basePrice(){
 
-                app.changeOrderingCriteria(criteria.basePrice);
+                app.changeOrderingCriteria(new OrderBasePrice());
                 app.sortList();
-                /*
-                assertEquals(app.getAd(0),a2); // Avenida de Oza 35 -> 5
-                assertEquals(app.getAd(1),a3); // Avenida de Oza 35 -> 5
-                assertEquals(app.getAd(2),a0); // Rosalia de Castro 2 -> 100
-                assertEquals(app.getAd(3),a1); // Ramon y Cajal 37 -> 200
-                assertEquals(app.getAd(4),a4); // Ronda de Outeiro 44 -> 550
-                 */
+
 
                 boolean Ordered=true;
                 for (int i=0; i <app.len()-1; i++ ){
@@ -86,16 +84,9 @@ public class ApartmentAppTest {
 
         @Test
         void TestOrder_totalPrice(){
-                app.changeOrderingCriteria(criteria.totalPrice);
+                app.changeOrderingCriteria(new OrderTotalPrice());
                 app.sortList();
 
-                /*
-                assertEquals(app.getAd(0),a0); // Rosalia de Castro 2 -> 104
-                assertEquals(app.getAd(1),a2); // Avenida de Oza 35 -> 121
-                assertEquals(app.getAd(2),a3); // Avenida de Oza 35 -> 121
-                assertEquals(app.getAd(3),a1); // Ramon y Cajal 37 -> 212
-                assertEquals(app.getAd(4),a4); // Ronda de Outeiro 44 -> 583
-                 */
 
                 boolean Ordered=true;
                 for (int i=0; i <app.len()-1; i++ ){
@@ -110,7 +101,7 @@ public class ApartmentAppTest {
         @Test
         void TestOrder_size(){
 
-                app.changeOrderingCriteria(criteria.size);
+                app.changeOrderingCriteria(new OrderSize());
                 app.sortList();
 
                 boolean Ordered=true;
@@ -120,20 +111,12 @@ public class ApartmentAppTest {
                 }
                 assertTrue(Ordered);
 
-                /*
-                assertEquals(app.getAd(0),a2); // Avenida de Oza 35 -> 99
-                assertEquals(app.getAd(1),a3); // Avenida de Oza 35 -> 99
-                assertEquals(app.getAd(2),a1); // Ramon y cajal  37 -> 99
-                assertEquals(app.getAd(3),a0); // Calle Rosalia de castro 2
-                assertEquals(app.getAd(4),a4); // Ronda de Outeiro 44
-
-                 */
         }
 
         @Test
         void TestOrder_beds(){
 
-                app.changeOrderingCriteria(criteria.beds);
+                app.changeOrderingCriteria(new OrderBeds());
                 app.sortList();
 
                 boolean Ordered=true;
@@ -142,15 +125,6 @@ public class ApartmentAppTest {
                                 Ordered=false;
                 }
                 assertTrue(Ordered);
-
-                /*
-                assertEquals(app.getAd(0),a2); // Avenida de Oza 35 -> 1
-                assertEquals(app.getAd(1),a3); // Avenida de Oza 35 -> 1
-                assertEquals(app.getAd(2),a4); // R Ronda de Outeiro 44 -> 2
-                assertEquals(app.getAd(3),a0); // Calle Rosalia de castro 2 -> 3
-                assertEquals(app.getAd(4),a1); // Calle Ramon y Cajal 37 -> 6
-
-                 */
 
 
         }
@@ -165,7 +139,7 @@ public class ApartmentAppTest {
                 assertEquals(app.getAd(4),a4); // Ronda de Outeiro 44
 
                 // changed criteria to basePrice
-                app.changeOrderingCriteria(criteria.basePrice);
+                app.changeOrderingCriteria(new OrderBasePrice());
                 app.sortList();
                 boolean Ordered=true;
                 for (int i=0; i <app.len()-1; i++ ){
@@ -175,7 +149,7 @@ public class ApartmentAppTest {
                 assertTrue(Ordered);
 
                 // changed criteria to size
-                app.changeOrderingCriteria(criteria.size);
+                app.changeOrderingCriteria(new OrderSize());
                 app.sortList();
                 Ordered=true;
                 for (int i=0; i <app.len()-1; i++ ){

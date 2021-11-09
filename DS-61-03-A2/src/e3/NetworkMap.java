@@ -7,10 +7,7 @@ public class NetworkMap implements NetworkManager{
     LinkedHashMap<String, List<TopicOfInterest>> usersMap;
 
     public NetworkMap() {
-
-
         usersMap = new LinkedHashMap<>();
-
     }
 
     @Override

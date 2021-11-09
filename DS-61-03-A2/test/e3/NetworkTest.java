@@ -73,8 +73,8 @@ public class NetworkTest {
                 Laura: Football, Anime""",netManagerType.toString());
 
         // WRONG NAME
-        assertThrows(IllegalArgumentException.class, () ->netManagerType.addUser("name"));
-        assertThrows(IllegalArgumentException.class, () ->netManagerType.addUser(null));
+        assertThrows(IllegalArgumentException.class, () ->netManagerType.removeUser("name"));
+        assertThrows(IllegalArgumentException.class, () ->netManagerType.removeUser(null));
     }
 
     @Test void Test_removal(){

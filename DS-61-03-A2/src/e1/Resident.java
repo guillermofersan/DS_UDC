@@ -7,6 +7,7 @@ public abstract class Resident extends Members{
 
     ResidentHouse resHouse;
 
+
     public Resident(String memberName, String memberSurname, int age, int horrocruxCount, ResidentHouse resHouse) {
         super(memberName, memberSurname, age, horrocruxCount);
         this.resHouse = resHouse;
@@ -20,6 +21,7 @@ class Student extends Resident{
         super(memberName, memberSurname, age, horrocruxCount, resHouse);
     }
 
+    @Override
     float getreward() {
         float total=90*horcruxCount;
 
@@ -29,6 +31,7 @@ class Student extends Resident{
         return total;
     }
 
+    @Override
     String catString() {
         return "Student of " + resHouse;
     }
@@ -40,6 +43,7 @@ class Ghost extends Resident{
         super(memberName, memberSurname, age, horrocruxCount, resHouse);
     }
 
+    @Override
     float getreward() {
         float total=80*horcruxCount;
         if (resHouse==ResidentHouse.Slytherin)
@@ -48,6 +52,7 @@ class Ghost extends Resident{
         return total;
     }
 
+    @Override
     String catString() {
         return "Ghost of " + resHouse;
     }

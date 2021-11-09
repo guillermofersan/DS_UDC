@@ -2,19 +2,18 @@ package e2;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 
 public class ApartmentApp {
 
     ArrayList<Advertisement> adList;
 
-    enum criteria{basePrice, totalPrice, size, beds}
-
-    criteria crit;
+    Comparator<Advertisement> criteria;
 
     public ApartmentApp() {
         adList = new ArrayList<>();
-        crit=null;
+        criteria=null;
     }
 
     void insertApartment(String location, float basePrice, float size, int beds, int parkingSpots, float... parkingPrices) {
@@ -23,21 +22,18 @@ public class ApartmentApp {
 
     }
 
-    public void changeOrderingCriteria(criteria crit) {
-        this.crit = crit;
+
+
+    public void changeOrderingCriteria(Comparator<Advertisement> criterion) {
+        this.criteria = criterion;
     }
 
     public void sortList(){ //by actual criteria
-        if (crit==null)
+        if (criteria==null)
             Collections.sort(adList);
         else{
-            switch (crit){
-                case basePrice -> adList.sort(new OrderBasePrice());
-                case totalPrice -> adList.sort(new OrderTotalPrice());
-                case size -> adList.sort(new OrderSize());
-                case beds -> adList.sort(new OrderBeds());
 
-            }
+            adList.sort(criteria);
         }
 
     }
