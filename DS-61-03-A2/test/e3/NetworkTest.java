@@ -120,9 +120,7 @@ public class NetworkTest {
         assertThrows(IllegalArgumentException.class, () -> netManagerType.removeInterest("Carlos",null));
         assertThrows(IllegalArgumentException.class, () -> netManagerType.removeInterest(null,"Interest"));
         assertThrows(IllegalArgumentException.class, () -> netManagerType.removeInterest("Jose","Interest"));
-
-
-        // AÑADIR CASO DE QUE USUARIO NO EXISTE
+        assertThrows(IllegalArgumentException.class, () -> netManagerType.removeInterest("Fernando","Interest"));
 
     }
 

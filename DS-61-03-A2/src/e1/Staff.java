@@ -1,7 +1,5 @@
 package e1;
 
-import java.lang.reflect.Member;
-
 abstract public class Staff extends Members{
 
     int baseSalary;

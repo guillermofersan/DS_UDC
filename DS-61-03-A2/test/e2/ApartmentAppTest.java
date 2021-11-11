@@ -55,6 +55,9 @@ public class ApartmentAppTest {
                 // Test wrong index in getAd
                 assertThrows(IllegalArgumentException.class, () ->app.getAd(100));
 
+                //test equals
+                assertEquals(a2,a3); /* Two ads with the same data but different reference
+                                        numbers are actually the same apartment*/
         }
 
 

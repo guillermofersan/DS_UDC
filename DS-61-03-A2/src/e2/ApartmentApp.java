@@ -48,19 +48,4 @@ public class ApartmentApp {
         return adList.get(i);
     }
 
-    /*
-    @Override
-    public String toString() {
-
-        StringBuilder s = new StringBuilder();
-        for (Advertisement a : adList) {
-
-            s.append("Advertisement ").append(a.getRefNum()).append("\n").append(a).append("\n");
-        }
-
-        return s.toString();
-    }
-
-     */
-
 }
