@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="Included e4">
+    <list default="true" id="196e92ab-5238-45d5-8722-969076a56676" name="Changes" comment="Errores corregidos y codigo comentado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/ApartmentApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/ApartmentApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/e2/ApartmentAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/e2/ApartmentAppTest.java" afterDir="false" />
     </list>
     <list id="a5be2dec-aa42-42b7-a451-9011bdeacc81" name="Changes by Javier" comment="Changes by Javier">
       <change beforePath="$PROJECT_DIR$/src/e1/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/School.java" afterDir="false" />
@@ -171,7 +168,7 @@
       <workItem from="1635782007083" duration="12110000" />
       <workItem from="1635869632362" duration="5357000" />
       <workItem from="1636475578949" duration="3509000" />
-      <workItem from="1636647047571" duration="303000" />
+      <workItem from="1636647047571" duration="1287000" />
     </task>
     <task id="LOCAL-00001" summary="created folder for Assignment 2">
       <created>1634533436916</created>
@@ -264,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636479967357</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Errores corregidos y codigo comentado">
+      <created>1636647449428</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636647449428</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +298,8 @@
     <MESSAGE value="finished e3 test included" />
     <MESSAGE value="all test over 90% coverage :D" />
     <MESSAGE value="Included e4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Included e4" />
+    <MESSAGE value="Errores corregidos y codigo comentado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Errores corregidos y codigo comentado" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DS_61_03_A2$All_in_DS_61_03_A2.ic" NAME="All in DS-61-03-A2 Coverage Results" MODIFIED="1636477952935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
