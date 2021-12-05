@@ -2,32 +2,43 @@ package e1;
 
 import java.util.Date;
 
-public class Ticket {
+final public class Ticket {
 
-    private final String origin, destination;
-    private final Float price;
-    private final Date date;
+    final private Origin origin;
+    final private Destination destination;
+    final private Price price;
+    final private TicketDate date;
 
-    public Ticket(String origin, String destination, Float price, Date date) {
+    public Ticket(Origin origin, Destination destination, Price price, TicketDate date) {
         this.origin = origin;
         this.destination = destination;
         this.price = price;
         this.date = date;
     }
 
-    public String getOrigin() {
+    public Origin getOrigin() {
         return origin;
     }
 
-    public String getDestination() {
+    public Destination getDestination() {
         return destination;
     }
 
-    public Float getPrice() {
+    public Price getPrice() {
         return price;
     }
 
-    public Date getDate() {
+    public TicketDate getDate() {
         return date;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "origin=" + origin.getOrigin() +
+                ", destination=" + destination.getdestination() +
+                ", price=" + price.getPrice() +
+                ", date=" + date.getDate() +
+                '}';
     }
 }
