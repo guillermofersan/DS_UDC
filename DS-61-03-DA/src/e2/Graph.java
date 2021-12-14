@@ -1,9 +1,8 @@
 package e2;
 
 import java.util.ArrayList;
-import java.util.TreeMap;
-import java.util.Iterator;
 import java.util.List;
+import java.util.TreeMap;
 
 public class Graph {
 
@@ -27,7 +26,7 @@ public class Graph {
 
     void addVertexifAbsent(Task c){
         //graph.put(c,new ArrayList<Task>());
-        graph.putIfAbsent(c,new ArrayList<Task>());
+        graph.putIfAbsent(c,new ArrayList<>());
     }
 
     void addDependency(Task father, Task dependent){
