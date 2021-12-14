@@ -1,8 +1,11 @@
 package e2;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
+import java.util.TreeMap;
 
-public class Task {
+public class Task implements Comparable<Task> {
 
     final private Character name;
 
@@ -31,4 +34,10 @@ public class Task {
     public String toString() {
         return name.toString();
     }
+
+    @Override
+    public int compareTo(Task t) {
+        return this.name.compareTo(t.getName());
+    }
+
 }

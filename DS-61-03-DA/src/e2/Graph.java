@@ -1,25 +1,27 @@
 package e2;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.Iterator;
 import java.util.List;
 
 public class Graph {
 
-    private HashMap<Task, List<Task>> graph;
-
-
+    private TreeMap<Task, List<Task>> graph;
 
     public Graph() {
-        graph = new HashMap<>();
+        graph = new TreeMap<>();
     }
 
-    public HashMap<Task, List<Task>> getGraph() {
+    public Graph(TreeMap<Task, List<Task>> treemap){
+        graph = treemap;
+    }
+
+    public TreeMap<Task, List<Task>> getmap() {
         return graph;
     }
 
-    public void setGraph(HashMap<Task, List<Task>> graph) {
+    public void setGraph(TreeMap<Task, List<Task>> graph) {
         this.graph = graph;
     }
 
@@ -31,8 +33,9 @@ public class Graph {
         return graph.isEmpty();
     }
 
-    void addVertex(Task c){
-        graph.put(c,new ArrayList<Task>());
+    void addVertexifAbsent(Task c){
+        //graph.put(c,new ArrayList<Task>());
+        graph.putIfAbsent(c,new ArrayList<Task>());
     }
 
     void addDependency(Task father, Task dependent){
@@ -49,6 +52,8 @@ public class Graph {
     List<Task> traverseGraph(GraphTraverser traverser){
         return traverser.traversegraph(this);
     }
+
+
 
     boolean taskDepends(Task t){
 
