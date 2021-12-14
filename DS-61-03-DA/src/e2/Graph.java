@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Graph {
 
-    private TreeMap<Task, List<Task>> graph;
+    private final TreeMap<Task, List<Task>> graph;
 
     public Graph() {
         graph = new TreeMap<>();
@@ -19,14 +19,6 @@ public class Graph {
 
     public TreeMap<Task, List<Task>> getmap() {
         return graph;
-    }
-
-    public void setGraph(TreeMap<Task, List<Task>> graph) {
-        this.graph = graph;
-    }
-
-    boolean isVertex(Task c){
-        return graph.containsKey(c);
     }
 
     boolean isEmptyGraph(){

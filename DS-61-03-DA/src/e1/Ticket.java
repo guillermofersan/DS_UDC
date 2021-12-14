@@ -1,6 +1,7 @@
 package e1;
 
 import java.util.Date;
+import java.util.Objects;
 
 final public class Ticket {
 
@@ -40,5 +41,18 @@ final public class Ticket {
                 ", price=" + price.getPrice() +
                 ", date=" + date.getDate() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ticket)) return false;
+        Ticket ticket = (Ticket) o;
+        return origin.equals(ticket.origin) && Objects.equals(destination, ticket.destination) && Objects.equals(price, ticket.price) && Objects.equals(date, ticket.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(origin, destination, price, date);
     }
 }
