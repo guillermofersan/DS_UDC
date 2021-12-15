@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04e6148e-0500-4a86-94ae-4e1eb18e95fe" name="Changes" comment="e2 test">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DS-61-03-PD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DS-61-03-DA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/Destination.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/Destination.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/Operator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/Origin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/Origin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/Price.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/Price.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/Ticket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/TicketDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/TicketDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/TicketManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/TicketManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/and.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/and.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e1/or.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/or.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e2/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e2/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e2/GraphTraverser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e2/GraphTraverser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e2/HierarchicalTraverser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e2/HierarchicalTraverser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e2/StrongdepTraverser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e2/StrongdepTraverser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e2/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e2/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e2/Taskplanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e2/Taskplanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-PD/e2/WeakdepTraverser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e2/WeakdepTraverser.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="21sEbKSJVM0xiJdoiUZp246RR8O" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="JUnit.TaskPlannerTest">
+    <configuration name="Taskplanner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="e2.Taskplanner" />
+      <module name="DS-61-03-DA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicketManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="e1.TicketManager" />
+      <module name="DS-61-03-DA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskPlannerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-DA" />
+      <extension name="coverage" sample_coverage="false">
+        <pattern>
+          <option name="PATTERN" value="e2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e2" />
+      <option name="MAIN_CLASS_NAME" value="e2.TaskPlannerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskPlannerTest.testInvalidinit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-DA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e2" />
+      <option name="MAIN_CLASS_NAME" value="e2.TaskPlannerTest" />
+      <option name="METHOD_NAME" value="testInvalidinit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskPlannerTest.testStrongDependency" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DS-61-03-DA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e2" />
+      <option name="MAIN_CLASS_NAME" value="e2.TaskPlannerTest" />
+      <option name="METHOD_NAME" value="testStrongDependency" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Taskplanner" />
+      <item itemvalue="Application.TicketManager" />
+      <item itemvalue="JUnit.TaskPlannerTest" />
+      <item itemvalue="JUnit.TaskPlannerTest.testInvalidinit" />
+      <item itemvalue="JUnit.TaskPlannerTest.testStrongDependency" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TaskPlannerTest" />
+        <item itemvalue="JUnit.TaskPlannerTest.testStrongDependency" />
+        <item itemvalue="Application.Taskplanner" />
+        <item itemvalue="JUnit.TaskPlannerTest.testInvalidinit" />
+        <item itemvalue="Application.TicketManager" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04e6148e-0500-4a86-94ae-4e1eb18e95fe" name="Changes" comment="" />
+      <created>1638721464595</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638721464595</updated>
+      <workItem from="1638721465759" duration="7843000" />
+      <workItem from="1638897298517" duration="5550000" />
+      <workItem from="1639497732693" duration="13181000" />
+      <workItem from="1639577471976" duration="232000" />
+    </task>
+    <task id="LOCAL-00001" summary="e1">
+      <created>1638729338413</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638729338413</updated>
+    </task>
+    <task id="LOCAL-00002" summary="e1 classes">
+      <created>1638729353116</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638729353116</updated>
+    </task>
+    <task id="LOCAL-00003" summary="started e2">
+      <created>1638902859927</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638902859927</updated>
+    </task>
+    <task id="LOCAL-00004" summary="tasks.txt uploaded">
+      <created>1638902882639</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1638902882639</updated>
+    </task>
+    <task id="LOCAL-00005" summary="prueba">
+      <created>1639499653098</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639499653098</updated>
+    </task>
+    <task id="LOCAL-00006" summary="e2 finished">
+      <created>1639506938538</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639506938538</updated>
+    </task>
+    <task id="LOCAL-00007" summary="e2 test">
+      <created>1639510923165</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639510923165</updated>
+    </task>
+    <task id="LOCAL-00008" summary="e2 test">
+      <created>1639510938561</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639510938561</updated>
+    </task>
+    <task id="LOCAL-00009" summary="e2 test">
+      <created>1639511000689</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639511000689</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="e1" />
+    <MESSAGE value="e1 classes" />
+    <MESSAGE value="started e2" />
+    <MESSAGE value="tasks.txt uploaded" />
+    <MESSAGE value="prueba" />
+    <MESSAGE value="e2 finished" />
+    <MESSAGE value="e2 test" />
+    <option name="LAST_COMMIT_MESSAGE" value="e2 test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DS_61_03_DA$TaskPlannerTest.ic" NAME="TaskPlannerTest Coverage Results" MODIFIED="1639510488306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>e2.*</FILTER>
+    </SUITE>
+  </component>
+</project>
