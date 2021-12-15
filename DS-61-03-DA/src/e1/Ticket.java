@@ -3,7 +3,7 @@ package e1;
 import java.util.Date;
 import java.util.Objects;
 
-final public class Ticket {
+final public class Ticket implements Comparable<Ticket>{
 
     final private Origin origin;
     final private Destination destination;
@@ -11,6 +11,8 @@ final public class Ticket {
     final private TicketDate date;
 
     public Ticket(Origin origin, Destination destination, Price price, TicketDate date) {
+        if (origin==null || destination==null || price==null || date==null)
+            throw new IllegalArgumentException();
         this.origin = origin;
         this.destination = destination;
         this.price = price;
@@ -33,6 +35,7 @@ final public class Ticket {
         return date;
     }
 
+
     @Override
     public String toString() {
         return "Ticket{" +
@@ -42,6 +45,7 @@ final public class Ticket {
                 ", date=" + date.getDate() +
                 '}';
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -54,5 +58,11 @@ final public class Ticket {
     @Override
     public int hashCode() {
         return Objects.hash(origin, destination, price, date);
+    }
+
+
+    @Override
+    public int compareTo(Ticket t) {
+        return Integer.compare(this.hashCode(), t.hashCode());
     }
 }

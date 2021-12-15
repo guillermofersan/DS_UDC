@@ -30,7 +30,7 @@ final public class Origin implements  Searchclause{
     }
 
     @Override
-    public List<Ticket> search(List<Ticket> ticketList) {
+    public List<Ticket> search(List<Ticket> ticketList){
 
         List<Ticket> auxlist = new ArrayList<>();
 

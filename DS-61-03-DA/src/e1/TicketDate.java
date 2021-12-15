@@ -9,6 +9,7 @@ final public class TicketDate implements Searchclause {
     final private LocalDate date;
 
     public TicketDate(LocalDate date) {
+        if (date==null) throw new IllegalArgumentException();
         this.date = date;
     }
 
