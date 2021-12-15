@@ -1,8 +1,10 @@
 package e1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-final public class Origin {
+final public class Origin implements  Searchclause{
     final private String origin;
 
     public Origin(String origin) {
@@ -25,5 +27,18 @@ final public class Origin {
     @Override
     public int hashCode() {
         return Objects.hash(origin);
+    }
+
+    @Override
+    public List<Ticket> search(List<Ticket> ticketList) {
+
+        List<Ticket> auxlist = new ArrayList<>();
+
+        for (Ticket t : ticketList){
+            if (t.getOrigin().equals(this)){
+                auxlist.add(t);
+            }
+        }
+        return auxlist;
     }
 }

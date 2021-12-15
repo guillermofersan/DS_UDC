@@ -1,9 +1,11 @@
 package e1;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-final public class TicketDate {
+final public class TicketDate implements Searchclause {
     final private LocalDate date;
 
     public TicketDate(LocalDate date) {
@@ -25,5 +27,18 @@ final public class TicketDate {
     @Override
     public int hashCode() {
         return Objects.hash(date);
+    }
+
+
+    @Override
+    public List<Ticket> search(List<Ticket> ticketList) {
+        List<Ticket> auxlist = new ArrayList<>();
+
+        for (Ticket t : ticketList){
+            if (t.getDate().equals(this)){
+                auxlist.add(t);
+            }
+        }
+        return auxlist;
     }
 }

@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TicketManagementTest {
 
     private TicketManager manager;
-    Operator AND, OR;
 
 
     @BeforeEach

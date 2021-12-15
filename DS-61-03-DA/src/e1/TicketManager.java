@@ -14,70 +14,15 @@ public class TicketManager {
         this.ticketList = ticketList;
     }
 
-    List<Ticket> searchByOrigin(Origin origin){
 
-        List<Ticket> auxlist = new ArrayList<>();
-
-        for (Ticket t : ticketList){
-            if (t.getOrigin().equals(origin)){
-                auxlist.add(t);
-            }
-        }
-
-        return auxlist;
-    }
-
-    List<Ticket> searchByDest(Destination dest){
-
-        List<Ticket> auxlist = new ArrayList<>();
-
-        for (Ticket t : ticketList){
-            if (t.getDestination().equals(dest)){
-                auxlist.add(t);
-            }
-        }
-
-        return auxlist;
-    }
-
-    List<Ticket> searchByPrice(Price price){
-
-        List<Ticket> auxlist = new ArrayList<>();
-
-        for (Ticket t : ticketList){
-            if (t.getPrice().getPrice()<=price.getPrice()){
-                auxlist.add(t);
-            }
-        }
-
-        return auxlist;
-    }
-
-    List<Ticket> searchByDate(TicketDate date){
-
-        List<Ticket> auxlist = new ArrayList<>();
-
-        for (Ticket t : ticketList){
-            if (t.getDate().equals(date)){
-                auxlist.add(t);
-            }
-        }
-
-        return auxlist;
-    }
-
-    List<Ticket> search(List<e1.Ticket> l1, Operator o, List<e1.Ticket> l2){
-
-        return o.operator(l1, l2);
-
+    List<Ticket> search(Searchclause clause){
+        if (clause==null) throw new IllegalArgumentException();
+        return clause.search(ticketList);
     }
 
 
 
     public static void main(String[] args) {
-
-        Operator AND=new and();
-        Operator OR=new or();
 
         Ticket t = new Ticket(new Origin("Madrid"),new Destination("coruña"), new Price(22.2), new TicketDate(LocalDate.of(2021,12,6)));
         Ticket t2 = new Ticket(new Origin("Huelva"),new Destination("Sevilla"), new Price(11.22), new TicketDate(LocalDate.of(2021,12,7)));
@@ -90,9 +35,29 @@ public class TicketManager {
 
         TicketManager man = new TicketManager(list);
 
-        System.out.print(man.searchByOrigin(new Origin("Madrid")).toString() + "\n");
-        System.out.print(man.searchByOrigin(new Origin("Huelva")).toString() + "\n");
-        System.out.print(man.searchByOrigin(new Origin("Sevilla")).toString() + "\n");
+        Searchclause crit1 = new Origin("Madrid");
+        Searchclause crit2 = new Destination("Barcelona");
+        Searchclause crit3 = new TicketDate(LocalDate.of(2021,12,7));
+        Searchclause crit4 = new Price(5.);
+        Searchclause crit5 = new Price(1.);
+
+
+        Searchclause clause1 = new ANDclause(crit1,crit2);
+        Searchclause clause2 = new ANDclause(crit5,clause1); //empty
+
+        System.out.print("        Origin=madrid: " + man.search(crit1) +
+                         "\nDestination=Barcelona: " + man.search(crit2) +
+                         "\n       Date=7/12/2021: " + man.search(crit3)+
+                         "\n             Price<=5: " + man.search(crit4) +
+                         "\n\n og=madrid+dest=barc: " + man.search(clause1) +
+                          "\n og=madrid+dest=barc: " + man.search(clause2)
+
+        );
+
+
+
+/*      System.out.print( + "\n");
+        System.out.print( + "\n");
 
         System.out.print(man.searchByDest(new Destination("Barcelona")).toString() + "\n");
 
@@ -101,7 +66,7 @@ public class TicketManager {
         System.out.print(man.searchByPrice(new Price(5.)).toString() + "\n\n\n");
 
         System.out.print(man.search(man.searchByOrigin(new Origin("Madrid")),OR, man.searchByPrice(new Price(5.))).toString() + "\n");
-
+        */
 
     }
 }

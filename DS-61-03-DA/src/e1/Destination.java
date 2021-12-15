@@ -1,8 +1,10 @@
 package e1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-final public class Destination {
+final public class Destination implements Searchclause {
     final private String destination;
 
     public Destination(String destination) {
@@ -25,5 +27,18 @@ final public class Destination {
     @Override
     public int hashCode() {
         return Objects.hash(destination);
+    }
+
+    @Override
+    public List<Ticket> search(List<Ticket> ticketList) {
+        List<Ticket> auxlist = new ArrayList<>();
+
+        for (Ticket t : ticketList){
+            if (t.getDestination().equals(this)){
+                auxlist.add(t);
+            }
+        }
+
+        return auxlist;
     }
 }
