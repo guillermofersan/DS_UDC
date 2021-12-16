@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04e6148e-0500-4a86-94ae-4e1eb18e95fe" name="Changes" comment="e1 changed completely">
+    <list default="true" id="04e6148e-0500-4a86-94ae-4e1eb18e95fe" name="Changes" comment="e1 test finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/Ticket.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/TicketDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/TicketDate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/TicketManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS-61-03-DA/e1/TicketManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/DS-61-03-DA/e1/TicketManagementTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/DS-61-03-DA/e1/TicketManagementTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/ANDclause.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/ANDclause.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/ORclause.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/ORclause.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Origin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Origin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/e1/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/e1/TicketDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/TicketDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/e1/TicketManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/TicketManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/Taskplanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Taskplanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/e1/TicketManagementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/e1/TicketManagementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2/TaskPlannerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/e2/TaskPlannerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +67,7 @@
     </configuration>
     <configuration name="TaskPlannerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-DA" />
-      <extension name="coverage">
+      <extension name="coverage" sample_coverage="false">
         <pattern>
           <option name="PATTERN" value="e2.*" />
           <option name="ENABLED" value="true" />
@@ -70,6 +75,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="e2" />
       <option name="MAIN_CLASS_NAME" value="e2.TaskPlannerTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -77,7 +83,7 @@
     </configuration>
     <configuration name="TicketManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DS-61-03-DA" />
-      <extension name="coverage">
+      <extension name="coverage" sample_coverage="false">
         <pattern>
           <option name="PATTERN" value="e1.*" />
           <option name="ENABLED" value="true" />
@@ -85,6 +91,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="e1" />
       <option name="MAIN_CLASS_NAME" value="e1.TicketManagementTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -132,8 +139,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TaskPlannerTest" />
-        <item itemvalue="JUnit.All in DS-61-03-DA" />
         <item itemvalue="JUnit.TicketManagementTest" />
+        <item itemvalue="JUnit.All in DS-61-03-DA" />
         <item itemvalue="JUnit.TicketManagementTest.basicSearch" />
         <item itemvalue="JUnit.TicketManagementTest.complexSearch" />
       </list>
@@ -152,7 +159,8 @@
       <workItem from="1639497732693" duration="13181000" />
       <workItem from="1639577471976" duration="232000" />
       <workItem from="1639578057558" duration="333000" />
-      <workItem from="1639578405893" duration="11975000" />
+      <workItem from="1639578405893" duration="12701000" />
+      <workItem from="1639653226629" duration="11866000" />
     </task>
     <task id="LOCAL-00001" summary="e1">
       <created>1638729338413</created>
@@ -224,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639583828613</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="e1 test finished">
+      <created>1639596122601</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639596122601</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +266,8 @@
     <MESSAGE value="e2 finished" />
     <MESSAGE value="e2 test" />
     <MESSAGE value="e1 changed completely" />
-    <option name="LAST_COMMIT_MESSAGE" value="e1 changed completely" />
+    <MESSAGE value="e1 test finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="e1 test finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -264,13 +280,17 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DS_61_03_DA$TaskPlannerTest.ic" NAME="TaskPlannerTest Coverage Results" MODIFIED="1639510488306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/DS_61_03_DA$TaskPlannerTest.ic" NAME="TaskPlannerTest Coverage Results" MODIFIED="1639677168639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>e2.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DS_61_03_DA$TicketManagementTest_basicSearch.ic" NAME="TicketManagementTest.basicSearch Coverage Results" MODIFIED="1639594420016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/DS_61_03_DA$All_in_DS_61_03_DA.ic" NAME="All in DS-61-03-DA Coverage Results" MODIFIED="1639674569836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/DS_61_03_DA$TicketManagementTest_basicSearch.ic" NAME="TicketManagementTest.basicSearch Coverage Results" MODIFIED="1639596050692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>e1.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DS_61_03_DA$TicketManagementTest.ic" NAME="TicketManagementTest Coverage Results" MODIFIED="1639594546395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DS_61_03_DA$TicketManagementTest_complexSearch.ic" NAME="TicketManagementTest.complexSearch Coverage Results" MODIFIED="1639595942262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>e1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DS_61_03_DA$TicketManagementTest.ic" NAME="TicketManagementTest Coverage Results" MODIFIED="1639677092273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>e1.*</FILTER>
     </SUITE>
   </component>

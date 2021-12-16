@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 final public class TicketDate implements Searchclause {
+
     final private LocalDate date;
 
     public TicketDate(LocalDate date) {

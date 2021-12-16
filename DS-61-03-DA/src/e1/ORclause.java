@@ -15,7 +15,7 @@ public class ORclause implements Searchclause{
         this.clause2 = clause2;
     }
 
-    public List<Ticket> auxOR(List<Ticket> l1, List<Ticket> l2){
+    private List<Ticket> auxOR(List<Ticket> l1, List<Ticket> l2){
         Set<Ticket> aux = new HashSet<>(l1);
         aux.addAll(l2);
         return new ArrayList<>(aux);

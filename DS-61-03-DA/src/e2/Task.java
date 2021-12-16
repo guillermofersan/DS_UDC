@@ -23,16 +23,6 @@ public class Task implements Comparable<Task> {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
-    @Override
-    public String toString() {
-        return name.toString();
-    }
-
-    @Override
     public int compareTo(Task t) {
         return this.name.compareTo(t.getName());
     }

@@ -13,7 +13,7 @@ public class ANDclause implements Searchclause {
         this.clause2 = clause2;
     }
 
-    public List<Ticket> auxAND(List<Ticket> l1, List<Ticket> l2){
+    private List<Ticket> auxAND(List<Ticket> l1, List<Ticket> l2){
         List<Ticket> l1aux = new ArrayList<>(l1);
         l1aux.retainAll(l2);
         return l1aux;

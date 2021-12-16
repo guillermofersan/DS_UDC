@@ -37,17 +37,6 @@ final public class Ticket implements Comparable<Ticket>{
 
 
     @Override
-    public String toString() {
-        return "Ticket{" +
-                "origin=" + origin.getOrigin() +
-                ", destination=" + destination.getdestination() +
-                ", price=" + price.getPrice() +
-                ", date=" + date.getDate() +
-                '}';
-    }
-
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Ticket)) return false;

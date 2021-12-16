@@ -38,19 +38,19 @@ public class TaskPlannerTest {
     @Test
     void testStrongDependency(){
         Task[] strongDep = {C,A,B,D,G,F,E,H,J};
-        assertEquals(new ArrayList<Task>(Arrays.asList(strongDep)),taskplanner.traverseGraph(new StrongdepTraverser()));
+        assertEquals(new ArrayList<>(Arrays.asList(strongDep)),taskplanner.traverseGraph(new StrongdepTraverser()));
     }
 
     @Test
     void testWeakDependency(){
         Task[] strongDep = {C,A,B,D,E,F,G,H,J};
-        assertEquals(new ArrayList<Task>(Arrays.asList(strongDep)),taskplanner.traverseGraph(new WeakdepTraverser()));
+        assertEquals(new ArrayList<>(Arrays.asList(strongDep)),taskplanner.traverseGraph(new WeakdepTraverser()));
     }
 
     @Test
     void testHierarchicalOrder(){
         Task[] strongDep = {C,G,A,F,H,B,D,E,J};
-        assertEquals(new ArrayList<Task>(Arrays.asList(strongDep)),taskplanner.traverseGraph(new HierarchicalTraverser()));
+        assertEquals(new ArrayList<>(Arrays.asList(strongDep)),taskplanner.traverseGraph(new HierarchicalTraverser()));
     }
 
 }

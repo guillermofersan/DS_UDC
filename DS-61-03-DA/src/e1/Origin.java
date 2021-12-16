@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-final public class Origin implements  Searchclause{
+final public class Origin implements Searchclause{
     final private String origin;
 
     public Origin(String origin) {

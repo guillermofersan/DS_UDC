@@ -44,8 +44,6 @@ public class Graph {
         return traverser.traversegraph(this);
     }
 
-
-
     boolean taskDepends(Task t){
 
         List<Task> aux;

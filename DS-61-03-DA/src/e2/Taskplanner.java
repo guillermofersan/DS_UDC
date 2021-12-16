@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Taskplanner {
 
-    Graph graph;
+    private final Graph graph;
 
     public Taskplanner(List<String> depList) {
 
@@ -27,39 +27,12 @@ public class Taskplanner {
         }
     }
 
-    List<Task> traverseGraph(GraphTraverser traverser){
+    public List<Task> traverseGraph(GraphTraverser traverser){
         return graph.traverseGraph(traverser);
     }
 
     public Graph getGraph() {
         return graph;
     }
-
-    public static void main(String[] args) {
-
-
-        String[] array = {"C -> A","C -> F","A -> B","A -> D","B -> E","D -> E","F -> E","G -> F","G -> H","F -> J","H -> J"};
-
-        Taskplanner t = new Taskplanner(Arrays.asList(array));
-
-
-        System.out.print(t.getGraph().toString() + "\n");
-
-        System.out.println("Strong Dependency: " + t.traverseGraph(new StrongdepTraverser()).toString());
-
-        System.out.println("Weak Dependency:   " + t.traverseGraph(new WeakdepTraverser()).toString());
-
-        System.out.println("hierarchi noseque: " + t.traverseGraph(new HierarchicalTraverser()).toString());
-
-
-
-
-
-
-    }
-
-
-
-
 
 }

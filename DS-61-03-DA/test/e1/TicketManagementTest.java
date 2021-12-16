@@ -37,7 +37,10 @@ public class TicketManagementTest {
         assertThrows(IllegalArgumentException.class, () -> new Price(-3.));
         assertThrows(IllegalArgumentException.class, () -> new TicketDate(null));
 
-        assertThrows(IllegalArgumentException.class, () -> new Ticket(null, null, null, null));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(null,new Destination("Bilbao"), new Price(19.99), new TicketDate(LocalDate.of(2022,1,1))));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(new Origin("Madrid"),null, new Price(19.99), new TicketDate(LocalDate.of(2022,1,1))));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(new Origin("Madrid"),new Destination("Bilbao"), null, new TicketDate(LocalDate.of(2022,1,1))));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(new Origin("Madrid"),new Destination("Bilbao"), new Price(19.99), null));
 
         Ticket test = new Ticket(new Origin("Madrid"),new Destination("Bilbao"), new Price(19.99), new TicketDate(LocalDate.of(2022,1,1)));
 
