@@ -9,8 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TicketManagementTest {
 
@@ -37,13 +36,25 @@ public class TicketManagementTest {
         assertThrows(IllegalArgumentException.class, () -> new Price(-3.));
         assertThrows(IllegalArgumentException.class, () -> new TicketDate(null));
 
-        assertThrows(IllegalArgumentException.class, () -> new Ticket(null,new Destination("Bilbao"), new Price(19.99), new TicketDate(LocalDate.of(2022,1,1))));
-        assertThrows(IllegalArgumentException.class, () -> new Ticket(new Origin("Madrid"),null, new Price(19.99), new TicketDate(LocalDate.of(2022,1,1))));
-        assertThrows(IllegalArgumentException.class, () -> new Ticket(new Origin("Madrid"),new Destination("Bilbao"), null, new TicketDate(LocalDate.of(2022,1,1))));
-        assertThrows(IllegalArgumentException.class, () -> new Ticket(new Origin("Madrid"),new Destination("Bilbao"), new Price(19.99), null));
+        Origin origin = new Origin("Madrid");
+        Destination dest = new Destination("Bilbao");
+        Price price = new Price(19.99);
+        TicketDate ticketdate =  new TicketDate(LocalDate.of(2022,1,1));
+        Ticket t = new Ticket(origin,dest, price, ticketdate);
 
-        Ticket test = new Ticket(new Origin("Madrid"),new Destination("Bilbao"), new Price(19.99), new TicketDate(LocalDate.of(2022,1,1)));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(null, dest, price,ticketdate));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(origin,null, price, new TicketDate(LocalDate.of(2022,1,1))));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(origin,dest, null, ticketdate));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(origin,dest, price, null));
 
+
+        /*Test of the different classes equal's method to increment coverage*/
+        assertNotEquals(origin, dest);
+        assertNotEquals(dest,price);
+        assertNotEquals(price,ticketdate);
+        assertNotEquals(price,ticketdate);
+        assertNotEquals(ticketdate,origin);
+        assertNotEquals(t, origin);
     }
 
     @Test
