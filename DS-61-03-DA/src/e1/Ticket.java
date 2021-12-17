@@ -1,6 +1,5 @@
 package e1;
 
-import java.util.Date;
 import java.util.Objects;
 
 final public class Ticket implements Comparable<Ticket>{
@@ -39,8 +38,7 @@ final public class Ticket implements Comparable<Ticket>{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Ticket)) return false;
-        Ticket ticket = (Ticket) o;
+        if (!(o instanceof Ticket ticket)) return false;
         return origin.equals(ticket.origin) && Objects.equals(destination, ticket.destination) && Objects.equals(price, ticket.price) && Objects.equals(date, ticket.date);
     }
 

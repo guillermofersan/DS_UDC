@@ -19,8 +19,7 @@ final public class Destination implements Searchclause {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Destination)) return false;
-        Destination d2 = (Destination) o;
+        if (!(o instanceof Destination d2)) return false;
         return destination.equals(d2.getdestination());
     }
 

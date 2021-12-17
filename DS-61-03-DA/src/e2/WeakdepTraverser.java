@@ -12,7 +12,7 @@ public class WeakdepTraverser implements GraphTraverser{
 
         List<Task> result = new ArrayList<>();
         List<Task> queue = new ArrayList<>();
-        List<Task> aux = new ArrayList<>();
+        List<Task> aux;
         Task auxTask;
 
         for (Task t : g.getmap().keySet()){
@@ -34,7 +34,6 @@ public class WeakdepTraverser implements GraphTraverser{
             g.deleteVertex(auxTask);
 
         }
-
         return result;
     }
 }

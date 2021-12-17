@@ -19,8 +19,7 @@ final public class Origin implements Searchclause{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Origin)) return false;
-        Origin origin1 = (Origin) o;
+        if (!(o instanceof Origin origin1)) return false;
         return origin.equals(origin1.getOrigin());
     }
 

@@ -19,8 +19,7 @@ final public class Price implements Searchclause{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Price)) return false;
-        Price price1 = (Price) o;
+        if (!(o instanceof Price price1)) return false;
         return price.equals(price1.price);
     }
 

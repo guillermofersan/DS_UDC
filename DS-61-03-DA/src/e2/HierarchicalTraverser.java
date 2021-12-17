@@ -17,7 +17,7 @@ public class HierarchicalTraverser implements GraphTraverser{
         List<Task> queue = new ArrayList<>();
         List<Task> queue2 = new ArrayList<>();
 
-        List<Task> aux = new ArrayList<>();
+        List<Task> aux;
         Task auxTask;
 
         for (Task t : g.getmap().keySet()){

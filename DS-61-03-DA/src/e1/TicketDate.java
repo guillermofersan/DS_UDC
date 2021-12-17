@@ -21,8 +21,7 @@ final public class TicketDate implements Searchclause {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof TicketDate)) return false;
-        TicketDate that = (TicketDate) o;
+        if (!(o instanceof TicketDate that)) return false;
         return date.equals(that.getDate());
     }
 
