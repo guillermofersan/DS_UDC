@@ -48,7 +48,7 @@ public class TicketManagementTest {
         assertThrows(IllegalArgumentException.class, () -> new Ticket(origin,dest, price, null));
 
 
-        /*Test of the different classes equal's method to increment coverage*/
+        /*Test of the different classes equal's method*/
         assertNotEquals(origin, dest);
         assertNotEquals(dest,price);
         assertNotEquals(price,ticketdate);
